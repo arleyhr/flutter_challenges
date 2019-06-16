@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_challenges/apps/app_for_collectors/screens/games_tab.dart';
 
 class AppForCollectors extends StatefulWidget {
   const AppForCollectors({Key key}) : super(key: key);
@@ -50,7 +50,7 @@ class _AppForCollectorsState extends State<AppForCollectors> with SingleTickerPr
         body: TabBarView(
           controller: _tabController,
           children: <Widget>[
-            Container(),
+            GamesTab(),
             Container(),
             Container(),
           ],

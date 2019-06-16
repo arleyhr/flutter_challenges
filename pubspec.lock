@@ -29,13 +29,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.14.11"
-  cupertino_icons:
+  dotted_border:
     dependency: "direct main"
     description:
-      name: cupertino_icons
+      name: dotted_border
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.2"
+    version: "0.1.1"
   flutter:
     dependency: "direct main"
     description: flutter
