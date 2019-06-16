@@ -12,24 +12,30 @@ class GamesTab extends StatelessWidget {
     return Container(
       color: Color.fromRGBO(245, 246, 255, 1),
       padding: EdgeInsets.only(top: 20.0),
-      child: GridView.builder(
-        itemCount: consoles.length + _placeholderButton, // +1 placeholder
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 20.0,
-          crossAxisSpacing: 20.0
-        ),
-        itemBuilder: (BuildContext context, index) {
-          bool isPair = (index % 2 == 0);
+      child: CustomScrollView(
+        slivers: <Widget>[
+          SliverGrid(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 20.0,
+              crossAxisSpacing: 20.0
+            ),
+            delegate: SliverChildBuilderDelegate(
+              (BuildContext context, index) {
+                bool isPair = (index % 2 == 0);
 
-          if (index == consoles.length) {
-            return PlaceholderCard(isPair: isPair, onPressed: () {},);
-          }
+              if (index == consoles.length) {
+                return PlaceholderCard(isPair: isPair, onPressed: () {},);
+              }
 
-          final item = consoles[index];
+              final item = consoles[index];
 
-          return ConsoleCard(isPair: isPair, item: item);
-        },
+              return ConsoleCard(isPair: isPair, item: item);
+              },
+              childCount: consoles.length + _placeholderButton, // +1 placeholder
+            )
+          )
+        ],
       )
     );
   }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/screens/games_tab.dart';
 
+Color primaryColor = Color.fromRGBO(63, 68, 157, 1);
+Color secondaryColor = Color.fromRGBO(128, 240, 180, 1);
+
 class AppForCollectors extends StatefulWidget {
   const AppForCollectors({Key key}) : super(key: key);
 
@@ -20,13 +23,13 @@ class _AppForCollectorsState extends State<AppForCollectors> with SingleTickerPr
   @override
   Widget build(BuildContext context) {
     return  MaterialApp(
-      title: 'Flutter Demo',
+      title: 'App For Collectors',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color.fromRGBO(63, 68, 157, 1),
-        accentColor: Color.fromRGBO(128, 240, 180, 1),
+        primaryColor: primaryColor,
+        accentColor: secondaryColor,
         tabBarTheme: TabBarTheme(
-          labelColor: Color.fromRGBO(128, 240, 180, 1),
+          labelColor: secondaryColor,
           unselectedLabelColor: Colors.white
         ),
       ),
@@ -54,8 +57,46 @@ class _AppForCollectorsState extends State<AppForCollectors> with SingleTickerPr
             Container(),
             Container(),
           ],
-        )
+        ),
+        bottomNavigationBar: BottomAppBar(
+          color: Color.fromRGBO(245, 246, 255, 1),
+          elevation: 0,
+          child: Container(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                BottomBarButton(icon: Icons.star_border, onPressed: () {}),
+                BottomBarButton(icon: Icons.apps, onPressed: () {}),
+                BottomBarButton(icon: Icons.person_outline, onPressed: () {}),
+              ],
+            ),
+          ),
+        ),
       ),
+    );
+  }
+}
+
+class BottomBarButton extends StatelessWidget {
+  const BottomBarButton({
+    Key key,
+    @required this.icon,
+    @required this.onPressed
+  }) : super(key: key);
+
+  final IconData icon;
+  final Function onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+      onPressed: onPressed,
+      color: Colors.transparent,
+      elevation: 0,
+      disabledElevation: 0,
+      highlightElevation: 0,
+      child: Icon(icon, size: 34.0, color: primaryColor),
     );
   }
 }
