@@ -6,10 +6,12 @@ class ConsoleCard extends StatefulWidget {
     Key key,
     @required this.isPair,
     @required this.item,
+    @required this.onPressed,
   }) : super(key: key);
 
   final bool isPair;
   final Console item;
+  final Function onPressed;
 
 
   @override
@@ -22,7 +24,7 @@ class _ConsoleCardState extends State<ConsoleCard> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: widget.onPressed,
       onTapDown: (TapDownDetails details) {
         setState(() {
           _pressed = true;
