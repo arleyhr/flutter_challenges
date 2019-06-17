@@ -47,6 +47,7 @@ flutter:
    - lib/apps/app_for_collectors/assets/gameboy.png
    - lib/apps/app_for_collectors/assets/switch.png
    - lib/apps/app_for_collectors/assets/xbox.png
+   - lib/apps/app_for_collectors/assets/placeholder.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
