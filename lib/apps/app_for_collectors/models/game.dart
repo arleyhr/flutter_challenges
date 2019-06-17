@@ -13,7 +13,7 @@ int ps4Id = consoles[1].id;
 int xboxOneId = consoles[2].id;
 int gbaId = consoles[3].id;
 
-List games = [
+List<Game> games = [
   // GBA
   Game(
     name: 'Metal Slug',
