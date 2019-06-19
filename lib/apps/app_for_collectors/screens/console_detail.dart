@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:flutter_challenges/apps/app_for_collectors/widgets/bottom_bar.dart';
+import 'package:flutter_challenges/apps/app_for_collectors/widgets/games_swiper.dart';
 
 import 'package:flutter_challenges/apps/app_for_collectors/models/console.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/models/game.dart';
@@ -19,6 +20,7 @@ class ConsoleDetail extends StatefulWidget {
 
 class _ConsoleDetailState extends State<ConsoleDetail> {
   Console _console;
+  bool _isGridSelected = false;
   List<Game> _games = List();
 
   @override
@@ -41,41 +43,104 @@ class _ConsoleDetailState extends State<ConsoleDetail> {
 
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: Text(_console.name),
       ),
+      bottomNavigationBar: BottomBar(color: Colors.white),
       body: Container(
-        color: Color.fromRGBO(245, 246, 255, 1),
-        width: double.infinity,
-        height: double.infinity,
-        child: Swiper(
-          layout: SwiperLayout.STACK,
-          itemWidth: size.width * 0.6,
-          itemHeight: size.height * 0.45,
-          itemCount: _games.length,
-          itemBuilder: (BuildContext context, index) {
-            final Game item = _games[index];
-            print(item.image);
-            return Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Theme.of(context).primaryColor.withAlpha(100),
-                    offset: Offset(0, 15),
-                    blurRadius: 20.0
-                  )
-                ]
+        color: Colors.white,
+        child: ListView(
+          children: <Widget>[
+            _buildHeaderConsole(context),
+            GamesSwiper(size: size, games: _games),
+          ],
+        )
+      ),
+    );
+  }
+
+  Container _buildHeaderConsole(BuildContext context) {
+    return Container(
+      color: Theme.of(context).primaryColor,
+      child: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          Column(
+            children: <Widget>[
+              Container(
+                height: 35.0,
+                color: Theme.of(context).primaryColor,
               ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.0),
-                child: FadeInImage(
-                  fit: BoxFit.fill,
-                  placeholder: AssetImage('lib/apps/app_for_collectors/assets/placeholder.png'),
-                  image: NetworkImage(item.image, scale: 1.0),
+              Container(
+                decoration: BoxDecoration(
+                color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30)
+                  )
+                ),
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    _buildGridButtons(context),
+                  ],
                 ),
               ),
-            );
+            ],
+          ),
+          HeroConsole(console: _console),
+        ],
+      ),
+    );
+  }
+
+  Row _buildGridButtons(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: <Widget>[
+        IconButton(
+          onPressed: () {
+            setState(() {
+              _isGridSelected = false;
+            });
           },
+          icon: Icon(Icons.view_carousel),
+          iconSize: 35,
+          color: !_isGridSelected ? Theme.of(context).primaryColor : Colors.grey,
         ),
+        SizedBox(),
+        IconButton(
+          onPressed: () {
+            setState(() {
+              _isGridSelected = true;
+            });
+          },
+          icon: Icon(Icons.view_module),
+          iconSize: 35,
+          color: _isGridSelected ? Theme.of(context).primaryColor : Colors.grey,
+        ),
+      ],
+    );
+  }
+}
+
+class HeroConsole extends StatelessWidget {
+  const HeroConsole({
+    Key key,
+    @required Console console,
+  }) : _console = console, super(key: key);
+
+  final Console _console;
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      top: 0,
+      child:  Hero(
+        tag: 'console-${_console.id}',
+        child: Image.asset('lib/apps/app_for_collectors/assets/${_console.image}', height: 70.0),
       ),
     );
   }
