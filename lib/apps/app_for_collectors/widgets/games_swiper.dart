@@ -4,14 +4,16 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/models/game.dart';
 
 class GamesSwiper extends StatelessWidget {
-  const GamesSwiper({
+  GamesSwiper({
     Key key,
     @required this.size,
     @required List<Game> games,
+    @required this.onItemChange,
   }) : _games = games, super(key: key);
 
   final Size size;
   final List<Game> _games;
+  final Function onItemChange;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +22,10 @@ class GamesSwiper extends StatelessWidget {
       padding: EdgeInsets.only(bottom: 20.0),
       child: Swiper(
         layout: SwiperLayout.STACK,
-        itemWidth: size.width * 0.6,
+        itemWidth: size.width * 0.55,
         itemHeight: size.height * 0.40,
         itemCount: _games.length,
+        onIndexChanged: (int index) => onItemChange(_games[index]),
         itemBuilder: (BuildContext context, index) {
           final Game item = _games[index];
           return Container(
@@ -54,7 +57,7 @@ class ImageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(20.0),
+      borderRadius: BorderRadius.circular(10.0),
       child: Stack(
         fit: StackFit.expand,
         children: <Widget>[
@@ -69,7 +72,7 @@ class ImageCard extends StatelessWidget {
             left: 0,
             bottom: 0,
             child: ClipRRect(
-              borderRadius: BorderRadius.only(topRight: Radius.circular(20.0)),
+              borderRadius: BorderRadius.only(topRight: Radius.circular(10.0)),
               child: RaisedButton(
                 onPressed: (){},
                 child: Icon(Icons.mode_edit, color: Colors.black54, size: 25,),

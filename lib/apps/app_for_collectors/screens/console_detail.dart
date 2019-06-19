@@ -20,6 +20,7 @@ class ConsoleDetail extends StatefulWidget {
 
 class _ConsoleDetailState extends State<ConsoleDetail> {
   Console _console;
+  Game _currentGame;
   bool _isGridSelected = false;
   List<Game> _games = List();
 
@@ -27,11 +28,10 @@ class _ConsoleDetailState extends State<ConsoleDetail> {
   void initState() {
     super.initState();
   }
-
   @override
-  Widget build(BuildContext context) {
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     ConsoleDetailArguments arguments = ModalRoute.of(context).settings.arguments;
-    Size size = MediaQuery.of(context).size;
     Console console = arguments.console;
 
     List<Game> gamesList = games.where((game) => game.consoleId == console.id).toList();
@@ -39,12 +39,45 @@ class _ConsoleDetailState extends State<ConsoleDetail> {
     setState(() {
       _console = console;
       _games = gamesList;
+      _currentGame = gamesList[0];
     });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
+    _onGameChange(Game game) {
+      print(game.rating);
+      setState(() {
+        _currentGame = game;
+      });
+    }
 
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: Text(_console.name),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(_console.name),
+            Container(
+              margin: EdgeInsets.only(left: 10),
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(49, 50, 124, 1),
+                borderRadius: BorderRadius.circular(20.0)
+              ),
+              padding: EdgeInsets.only(left: 7.0, top: 3.0, right: 7.0, bottom: 3.0),
+              child: Text(_console.totalGames.toString(), style: TextStyle(fontSize: 12))
+            )
+          ],
+        ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.add, color: Colors.white, size: 30),
+          )
+        ],
       ),
       bottomNavigationBar: BottomBar(color: Colors.white),
       body: Container(
@@ -52,7 +85,32 @@ class _ConsoleDetailState extends State<ConsoleDetail> {
         child: ListView(
           children: <Widget>[
             _buildHeaderConsole(context),
-            GamesSwiper(size: size, games: _games),
+            SwiperSection(currentGame: _currentGame, size: size, games: _games, onGameChange: _onGameChange),
+            Text(_currentGame.name, style: TextStyle(
+              color: Theme.of(context).primaryColor,
+              fontSize: 20.0
+            ), textAlign: TextAlign.center),
+            SizedBox(
+              height: 5,
+            ),
+            RatingStars(currentGame: _currentGame),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 50),
+              child: Slider(
+                value: _currentGame.percent.toDouble(),
+                min: 0,
+                max: 100,
+                inactiveColor: Color.fromRGBO(200, 202, 221, 1),
+                onChanged: (value){
+                  setState(() {
+                    _currentGame.percent = value.toInt();
+                  });
+                },
+              ),
+            )
           ],
         )
       ),
@@ -122,6 +180,112 @@ class _ConsoleDetailState extends State<ConsoleDetail> {
           color: _isGridSelected ? Theme.of(context).primaryColor : Colors.grey,
         ),
       ],
+    );
+  }
+}
+
+class RatingStars extends StatelessWidget {
+  const RatingStars({
+    Key key,
+    @required Game currentGame,
+  }) : _currentGame = currentGame, super(key: key);
+
+  final Game _currentGame;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: List.generate(5, (int index) {
+        return Icon(
+          index < _currentGame.rating ? Icons.star : Icons.star_border,
+          color: Color.fromRGBO(200, 202, 221, 1),
+          size: 22,
+        );
+      }),
+    );
+  }
+}
+
+class SwiperSection extends StatelessWidget {
+  const SwiperSection({
+    Key key,
+    @required Game currentGame,
+    @required this.size,
+    @required List<Game> games,
+    @required this.onGameChange,
+  }) : _currentGame = currentGame, _games = games, super(key: key);
+
+  final Game _currentGame;
+  final Size size;
+  final List<Game> _games;
+  final Function onGameChange;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        RightStats(selectedGame: _currentGame),
+        GamesSwiper(size: size, games: _games, onItemChange: onGameChange),
+      ],
+    );
+  }
+}
+
+class RightStats extends StatelessWidget {
+  RightStats({
+    Key key,
+    this.selectedGame
+  }) : super(key: key);
+
+  Game selectedGame;
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      top: 80.0,
+      right: 25.0,
+      child: Column(
+        children: <Widget>[
+          IconButton(
+            onPressed: (){},
+            icon: Icon(
+              Icons.bubble_chart, size: 35, color: Theme.of(context).primaryColor
+            ),
+          ),
+          Text('${selectedGame.percent}%', style: TextStyle(
+            fontSize: 18,
+            height: 0.5,
+            color: Colors.grey,
+            fontWeight: FontWeight.w100
+          )),
+          SizedBox(
+            height: 35,
+          ),
+          IconButton(
+            onPressed: (){},
+            icon: Icon(
+              Icons.people, size: 35, color: Theme.of(context).primaryColor
+            ),
+          ),
+          Text(selectedGame.people.toString(), style: TextStyle(
+            height: 0.5,
+            fontSize: 18,
+            color: Colors.grey,
+            fontWeight: FontWeight.w100
+          )),
+          SizedBox(
+            height: 35,
+          ),
+          IconButton(
+            onPressed: (){},
+            icon: Icon(
+              Icons.favorite_border, size: 35, color: Theme.of(context).primaryColor
+            ),
+          )
+        ],
+      ),
     );
   }
 }
