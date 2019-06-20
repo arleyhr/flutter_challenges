@@ -4,10 +4,10 @@ import 'package:flutter_challenges/apps/app_for_collectors/main.dart';
 class BottomBar extends StatelessWidget {
   BottomBar({
     Key key,
-    this.color
+    this.color = const Color.fromRGBO(245, 246, 255, 1)
   }) : super(key: key);
 
-  Color color = Color.fromRGBO(245, 246, 255, 1);
+  final Color color;
 
   @override
   Widget build(BuildContext context) {

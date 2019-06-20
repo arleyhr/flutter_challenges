@@ -48,71 +48,93 @@ class _ConsoleDetailState extends State<ConsoleDetail> {
     Size size = MediaQuery.of(context).size;
 
     _onGameChange(Game game) {
-      print(game.rating);
       setState(() {
         _currentGame = game;
       });
     }
 
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(_console.name),
-            Container(
-              margin: EdgeInsets.only(left: 10),
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(49, 50, 124, 1),
-                borderRadius: BorderRadius.circular(20.0)
-              ),
-              padding: EdgeInsets.only(left: 7.0, top: 3.0, right: 7.0, bottom: 3.0),
-              child: Text(_console.totalGames.toString(), style: TextStyle(fontSize: 12))
-            )
-          ],
+    List<Widget> _SwipperView() {
+      return [
+        SwiperSection(currentGame: _currentGame, size: size, games: _games, onGameChange: _onGameChange),
+        Text(_currentGame.name, style: TextStyle(
+          color: Theme.of(context).primaryColor,
+          fontSize: 20.0
+        ), textAlign: TextAlign.center),
+        SizedBox(
+          height: 5,
         ),
-        actions: <Widget>[
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.add, color: Colors.white, size: 30),
-          )
-        ],
-      ),
+        RatingStars(currentGame: _currentGame),
+        SizedBox(
+          height: 20,
+        ),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 50),
+          child: Slider(
+            value: _currentGame.percent.toDouble(),
+            min: 0,
+            max: 100,
+            inactiveColor: Color.fromRGBO(200, 202, 221, 1),
+            onChanged: (value){
+              setState(() {
+                _currentGame.percent = value.toInt();
+              });
+            },
+          ),
+        )
+      ];
+    }
+
+    return Scaffold(
       bottomNavigationBar: BottomBar(color: Colors.white),
-      body: Container(
-        color: Colors.white,
-        child: ListView(
-          children: <Widget>[
-            _buildHeaderConsole(context),
-            SwiperSection(currentGame: _currentGame, size: size, games: _games, onGameChange: _onGameChange),
-            Text(_currentGame.name, style: TextStyle(
-              color: Theme.of(context).primaryColor,
-              fontSize: 20.0
-            ), textAlign: TextAlign.center),
-            SizedBox(
-              height: 5,
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            elevation: 0,
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(_console.name),
+                Container(
+                  margin: EdgeInsets.only(left: 10),
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(49, 50, 124, 1),
+                    borderRadius: BorderRadius.circular(20.0)
+                  ),
+                  padding: EdgeInsets.only(left: 7.0, top: 3.0, right: 7.0, bottom: 3.0),
+                  child: Text(_console.totalGames.toString(), style: TextStyle(fontSize: 12))
+                )
+              ],
             ),
-            RatingStars(currentGame: _currentGame),
-            SizedBox(
-              height: 20,
+            actions: <Widget>[
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.add, color: Colors.white, size: 30),
+              )
+            ],
+          ),
+          if (!_isGridSelected)
+            SliverList(
+              delegate: SliverChildListDelegate([
+                _buildHeaderConsole(context),
+                  ..._SwipperView()
+              ])
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 50),
-              child: Slider(
-                value: _currentGame.percent.toDouble(),
-                min: 0,
-                max: 100,
-                inactiveColor: Color.fromRGBO(200, 202, 221, 1),
-                onChanged: (value){
-                  setState(() {
-                    _currentGame.percent = value.toInt();
-                  });
+          if (_isGridSelected)
+            SliverGrid(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 20,
+                crossAxisSpacing: 20,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  final item = _games[index];
+                  return Text(item.name);
                 },
+                childCount: _games.length
               ),
             )
-          ],
-        )
+        ],
       ),
     );
   }
@@ -239,7 +261,7 @@ class RightStats extends StatelessWidget {
     this.selectedGame
   }) : super(key: key);
 
-  Game selectedGame;
+  final Game selectedGame;
 
   @override
   Widget build(BuildContext context) {
