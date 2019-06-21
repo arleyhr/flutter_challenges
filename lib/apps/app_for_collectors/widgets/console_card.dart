@@ -81,7 +81,10 @@ class _ConsoleCardState extends State<ConsoleCard> {
               ],
             ),
             Positioned(
-              child: Image.asset('lib/apps/app_for_collectors/assets/${widget.item.image}', height: 70.0),
+              child: Hero(
+                tag: 'console-${widget.item.id}',
+                child: Image.asset('lib/apps/app_for_collectors/assets/${widget.item.image}', height: 70.0),
+              ),
               right: -45,
               top: 20,
             )
