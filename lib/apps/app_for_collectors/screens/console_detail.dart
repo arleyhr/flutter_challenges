@@ -3,6 +3,7 @@ import 'package:flutter_challenges/apps/app_for_collectors/widgets/bottom_bar.da
 
 import 'package:flutter_challenges/apps/app_for_collectors/models/console.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/models/game.dart';
+import 'package:flutter_challenges/apps/app_for_collectors/widgets/console_detail_sliver_appbar.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/widgets/swiper_view.dart';
 
 class ConsoleDetailArguments {
@@ -52,9 +53,22 @@ class _ConsoleDetailState extends State<ConsoleDetail> {
         _currentGame = game;
       });
     }
+
     _onSliderChange(value) {
       setState(() {
         _currentGame.percent = value.toInt();
+      });
+    }
+
+    _setGridSelected() {
+      setState(() {
+        _isGridSelected = true;
+      });
+    }
+
+    _setSwiperSelected() {
+      setState(() {
+        _isGridSelected = false;
       });
     }
 
@@ -63,39 +77,14 @@ class _ConsoleDetailState extends State<ConsoleDetail> {
       backgroundColor: Colors.white,
       body: CustomScrollView(
         slivers: <Widget>[
-          SliverAppBar(
-            elevation: 0,
-            floating: true,
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(_console.name),
-                Container(
-                  margin: EdgeInsets.only(left: 10),
-                  decoration: BoxDecoration(
-                    color: Color.fromRGBO(49, 50, 124, 1),
-                    borderRadius: BorderRadius.circular(20.0)
-                  ),
-                  padding: EdgeInsets.only(left: 7.0, top: 3.0, right: 7.0, bottom: 3.0),
-                  child: Text(_console.totalGames.toString(), style: TextStyle(fontSize: 12))
-                )
-              ],
-            ),
-            actions: <Widget>[
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.add, color: Colors.white, size: 30),
-              )
-            ],
-            expandedHeight: 180,
-            flexibleSpace: FlexibleSpaceBar(
-              centerTitle: false,
-              background: Container(
-                height: double.infinity,
-                alignment: Alignment.bottomLeft,
-                child: _buildHeaderConsole(context),
-              ),
-            ),
+          ConsoleDetailSliverAppBar(
+            title: _console.name,
+            totalGames: _console.totalGames.toString(),
+            consoleId: _console.id.toString(),
+            consoleImage: _console.image,
+            isGridSelected: _isGridSelected,
+            setGridSelected: _setGridSelected,
+            setSwiperSelected: _setSwiperSelected,
           ),
           if (!_isGridSelected)
             SwiperView(
@@ -115,100 +104,26 @@ class _ConsoleDetailState extends State<ConsoleDetail> {
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
                   final item = _games[index];
-                  return Text(item.name);
+                  bool isPair = (index % 2 == 0);
+                  return Container(
+                    margin: EdgeInsets.only(
+                      left: isPair ? 20 : 0,
+                      right: !isPair ? 20 : 0,
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: FadeInImage(
+                        placeholder: AssetImage('lib/apps/app_for_collectors/assets/placeholder.png'),
+                        image: NetworkImage(item.image, scale: 1.0),
+                        fit: BoxFit.cover,
+                      ),
+                    )
+                  );
                 },
                 childCount: _games.length
               ),
             )
         ],
-      ),
-    );
-  }
-
-  Container _buildHeaderConsole(BuildContext context) {
-    return Container(
-      color: Theme.of(context).primaryColor,
-      height: 110,
-      child: Stack(
-        alignment: Alignment.center,
-        children: <Widget>[
-          Column(
-            children: <Widget>[
-              Container(
-                height: 40.0,
-                color: Theme.of(context).primaryColor,
-              ),
-              Container(
-                height: 70,
-                decoration: BoxDecoration(
-                color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30)
-                  )
-                ),
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    _buildGridButtons(context),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          HeroConsole(console: _console),
-        ],
-      ),
-    );
-  }
-
-  Row _buildGridButtons(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: <Widget>[
-        IconButton(
-          onPressed: () {
-            setState(() {
-              _isGridSelected = false;
-            });
-          },
-          icon: Icon(Icons.view_carousel),
-          iconSize: 35,
-          color: !_isGridSelected ? Theme.of(context).primaryColor : Colors.grey,
-        ),
-        SizedBox(),
-        IconButton(
-          onPressed: () {
-            setState(() {
-              _isGridSelected = true;
-            });
-          },
-          icon: Icon(Icons.view_module),
-          iconSize: 35,
-          color: _isGridSelected ? Theme.of(context).primaryColor : Colors.grey,
-        ),
-      ],
-    );
-  }
-}
-
-class HeroConsole extends StatelessWidget {
-  const HeroConsole({
-    Key key,
-    @required Console console,
-  }) : _console = console, super(key: key);
-
-  final Console _console;
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      top: 0,
-      child:  Hero(
-        tag: 'console-${_console.id}',
-        child: Image.asset('lib/apps/app_for_collectors/assets/${_console.image}', height: 70.0),
       ),
     );
   }

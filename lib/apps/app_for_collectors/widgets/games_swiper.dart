@@ -62,7 +62,7 @@ class ImageCard extends StatelessWidget {
         fit: StackFit.expand,
         children: <Widget>[
           FadeInImage(
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
             placeholder: AssetImage('lib/apps/app_for_collectors/assets/placeholder.png'),
             image: NetworkImage(item.image, scale: 1.0),
           ),
