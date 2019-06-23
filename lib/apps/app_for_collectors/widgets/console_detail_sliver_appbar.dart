@@ -94,7 +94,7 @@ class ConsoleDetailSliverAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       elevation: 0,
-      floating: true,
+      pinned: true,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[

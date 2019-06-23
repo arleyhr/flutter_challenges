@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/screens/console_detail.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/screens/games_tab.dart';
