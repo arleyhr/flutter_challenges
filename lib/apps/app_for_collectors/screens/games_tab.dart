@@ -16,9 +16,15 @@ class GamesTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Color.fromRGBO(245, 246, 255, 1),
-      padding: EdgeInsets.only(top: 20.0),
       child: CustomScrollView(
         slivers: <Widget>[
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                SizedBox(height: 20)
+              ]
+            ),
+          ),
           SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,

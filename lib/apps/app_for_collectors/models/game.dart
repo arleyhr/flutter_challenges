@@ -52,6 +52,8 @@ List<Game> games = [
     name: 'Metroid: Zero Mission',
     image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/lib/apps/app_for_collectors/assets/metroid.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
+    percent: randomNumber(min: minPercent, max: maxPercent),
+    people: randomNumber(min: minPeople, max: maxPeople),
     consoleId: gbaId,
   ),
   Game(
