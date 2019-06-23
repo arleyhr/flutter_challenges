@@ -14,6 +14,9 @@ class GameTabsSliverAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      pinned: true,
+      floating: true,
+      elevation: 0,
       leading: IconButton(
         padding: EdgeInsets.all(0),
         onPressed: () {},

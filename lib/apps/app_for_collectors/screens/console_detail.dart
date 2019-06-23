@@ -95,7 +95,13 @@ class _ConsoleDetailState extends State<ConsoleDetail> {
               onSliderChange: _onSliderChange,
             ),
           if (_isGridSelected)
-            SliverGrid(
+            ...[
+              SliverList(
+                delegate: SliverChildListDelegate([
+                  SizedBox(height: 40)
+                ]),
+              ),
+              SliverGrid(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 mainAxisSpacing: 20,
@@ -123,6 +129,7 @@ class _ConsoleDetailState extends State<ConsoleDetail> {
                 childCount: _games.length
               ),
             )
+          ]
         ],
       ),
     );
