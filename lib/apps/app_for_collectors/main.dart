@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/screens/console_detail.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/screens/games_tab.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/widgets/bottom_bar.dart';
+import 'package:flutter_challenges/apps/app_for_collectors/widgets/game_tabs_sliver_appbar.dart';
 
 Color primaryColor = Color.fromRGBO(63, 68, 157, 1);
 Color secondaryColor = Color.fromRGBO(128, 240, 180, 1);
@@ -54,32 +56,26 @@ class ScaffoldHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Scaffold(
-      appBar: AppBar(
-        leading: Icon(Icons.search),
-        title: Text('Your collection', style: TextStyle(fontWeight: FontWeight.bold),),
-        centerTitle: true,
-        actions: <Widget>[
-          Icon(Icons.more_vert)
-        ],
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: <Widget>[
-            Tab(text: 'Games'),
-            Tab(text: 'Books'),
-            Tab(text: 'Movies'),
-          ],
-        ),
-      ),
-      body: TabBarView(
-        controller: _tabController,
-        children: <Widget>[
-          GamesTab(),
-          Container(),
-          Container(),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          GameTabsSliverAppBar(size: size, tabController: _tabController),
+          SliverFillRemaining(
+            child: TabBarView(
+              controller: _tabController,
+              children: <Widget>[
+                GamesTab(),
+                Container(),
+                Container(),
+              ],
+            )
+          )
         ],
       ),
       bottomNavigationBar: BottomBar(),
     );
   }
 }
+

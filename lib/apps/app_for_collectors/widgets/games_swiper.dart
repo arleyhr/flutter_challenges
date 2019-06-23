@@ -23,7 +23,7 @@ class GamesSwiper extends StatelessWidget {
       child: Swiper(
         layout: SwiperLayout.STACK,
         itemWidth: size.width * 0.55,
-        itemHeight: size.height * 0.40,
+        itemHeight: size.height * 0.37,
         itemCount: _games.length,
         onIndexChanged: (int index) => onItemChange(_games[index]),
         itemBuilder: (BuildContext context, index) {
@@ -62,7 +62,7 @@ class ImageCard extends StatelessWidget {
         fit: StackFit.expand,
         children: <Widget>[
           FadeInImage(
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
             placeholder: AssetImage('lib/apps/app_for_collectors/assets/placeholder.png'),
             image: NetworkImage(item.image, scale: 1.0),
           ),

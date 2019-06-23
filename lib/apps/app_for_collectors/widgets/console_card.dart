@@ -23,16 +23,16 @@ class _ConsoleCardState extends State<ConsoleCard> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: widget.onPressed,
+    return InkWell(
+      onTap: () {
+        setState(() {
+          _pressed = false;
+        });
+        widget.onPressed();
+      },
       onTapDown: (TapDownDetails details) {
         setState(() {
           _pressed = true;
-        });
-      },
-      onTapUp: (TapUpDetails details) {
-        setState(() {
-          _pressed = false;
         });
       },
       child: Container(
