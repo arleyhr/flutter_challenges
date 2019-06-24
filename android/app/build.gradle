@@ -54,15 +54,34 @@ android {
 
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.release
+
+            minifyEnabled true
+            useProguard true
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 flutter {
     source '../..'
+}
+
+afterEvaluate {
+    mergeReleaseJniLibFolders.doLast {
+        def archTypes = ["arm-release", "arm64-release"]
+        archTypes.forEach { item ->
+            copy {
+                from zipTree("$flutterRoot/bin/cache/artifacts/engine/android-$item/flutter.jar")
+                include 'lib/*/libflutter.so'
+                into "$buildDir/intermediates/jniLibs/release/"
+                eachFile {
+                    it.path = it.path.replaceFirst("lib/", "")
+                }
+            }
+        }
+    }
 }
 
 dependencies {
