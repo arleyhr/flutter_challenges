@@ -46,6 +46,7 @@ class _AppForCollectorsGameState extends State<AppForCollectorsGame> {
           child: Stack(
             children: <Widget>[
               PageView.builder(
+                reverse: true,
                 controller: _pageController,
                 itemCount: _games.length,
                 itemBuilder: (BuildContext context, index) {
