@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_challenges/apps/app_for_collectors/main.dart';
+import 'package:flutter_challenges/apps/app_for_collectors/theme.dart';
 
 class BottomBar extends StatelessWidget {
   BottomBar({

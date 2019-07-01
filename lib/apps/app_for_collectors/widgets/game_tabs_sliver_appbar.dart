@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_challenges/apps/app_for_collectors/main.dart';
+import 'package:flutter_challenges/apps/app_for_collectors/theme.dart';
 
 class GameTabsSliverAppBar extends StatelessWidget {
   const GameTabsSliverAppBar({
@@ -14,6 +14,7 @@ class GameTabsSliverAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
+      backgroundColor: primaryColor,
       pinned: true,
       floating: true,
       elevation: 0,
@@ -83,6 +84,7 @@ class GameTabsSliverAppBar extends StatelessWidget {
                 child: TabBar(
                   controller: _tabController,
                   indicatorWeight: 4,
+                  indicatorColor: secondaryColor,
                   tabs: <Widget>[
                     Tab(text: 'Games'),
                     Tab(text: 'Books'),

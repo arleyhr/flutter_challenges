@@ -1,30 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_challenges/home.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/main.dart';
+import 'package:flutter_challenges/apps/app_for_collectors/screens/console_detail.dart';
 
-enum routeKeys {
-  HOME,
-  APP_FOR_COLLECTORS
-}
+// Route contansts
+const String rootView = '/';
 
-String getRouteName (routeKeys key) {
-  switch (key) {
-    case routeKeys.HOME:
-      return '/';
-    case routeKeys.APP_FOR_COLLECTORS:
-      return '/app_for_collectors';
-    default:
-      return '/';
-  }
-}
+const String appForCollectorsView = '/app_for_collectors';
+const String appForCollectorsConsole = '/app_for_collectors/console';
+
 
 Route generateRoute (RouteSettings settings) {
   switch (settings.name) {
-    case '/':
+    case rootView:
       return buildRoute(settings, MyHomePage());
       break;
-    case '/app_for_collectors':
-      return buildRoute(settings, AppForCollectors());
+    case appForCollectorsView:
+      return buildRoute(settings, AppForCollectorsHome());
+      break;
+    case appForCollectorsConsole:
+      return buildRoute(settings, ConsoleDetail());
       break;
     default:
       return buildRoute(settings, MyHomePage());

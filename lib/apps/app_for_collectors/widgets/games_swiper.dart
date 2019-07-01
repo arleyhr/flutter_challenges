@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_challenges/apps/app_for_collectors/theme.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 import 'package:flutter_challenges/apps/app_for_collectors/models/game.dart';
@@ -32,7 +33,7 @@ class GamesSwiper extends StatelessWidget {
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
-                  color: Theme.of(context).primaryColor.withAlpha(100),
+                  color: primaryColor.withAlpha(100),
                   offset: Offset(0, 15),
                   blurRadius: 20.0
                 )
