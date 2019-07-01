@@ -10,11 +10,13 @@ class GamesSwiper extends StatelessWidget {
     @required this.size,
     @required List<Game> games,
     @required this.onItemChange,
+    @required this.onGameTap,
   }) : _games = games, super(key: key);
 
   final Size size;
   final List<Game> _games;
   final Function onItemChange;
+  final Function onGameTap;
 
   @override
   Widget build(BuildContext context) {
@@ -29,17 +31,22 @@ class GamesSwiper extends StatelessWidget {
         onIndexChanged: (int index) => onItemChange(_games[index]),
         itemBuilder: (BuildContext context, index) {
           final Game item = _games[index];
-          return Container(
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: primaryColor.withAlpha(100),
-                  offset: Offset(0, 15),
-                  blurRadius: 20.0
-                )
-              ]
+          return InkWell(
+            onTap: () {
+              onGameTap(index);
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: primaryColor.withAlpha(100),
+                    offset: Offset(0, 15),
+                    blurRadius: 20.0
+                  )
+                ]
+              ),
+              child: ImageCard(item: item),
             ),
-            child: ImageCard(item: item),
           );
         },
       ),
@@ -57,31 +64,34 @@ class ImageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(10.0),
-      child: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          FadeInImage(
-            fit: BoxFit.fill,
-            placeholder: AssetImage('lib/apps/app_for_collectors/assets/placeholder.png'),
-            image: NetworkImage(item.image, scale: 1.0),
-          ),
-          Positioned(
-            width: 60.0,
-            height: 60.0,
-            left: 0,
-            bottom: 0,
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(topRight: Radius.circular(10.0)),
-              child: RaisedButton(
-                onPressed: (){},
-                child: Icon(Icons.mode_edit, color: Colors.black54, size: 25,),
-                color: Colors.white,
-              ),
+    return Hero(
+      tag: 'game-${item.name}',
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10.0),
+        child: Stack(
+          fit: StackFit.expand,
+          children: <Widget>[
+            FadeInImage(
+              fit: BoxFit.fill,
+              placeholder: AssetImage('lib/apps/app_for_collectors/assets/placeholder.png'),
+              image: NetworkImage(item.image, scale: 1.0),
             ),
-          )
-        ],
+            Positioned(
+              width: 60.0,
+              height: 60.0,
+              left: 0,
+              bottom: 0,
+              child: ClipRRect(
+                borderRadius: BorderRadius.only(topRight: Radius.circular(10.0)),
+                child: RaisedButton(
+                  onPressed: (){},
+                  child: Icon(Icons.mode_edit, color: Colors.black54, size: 25,),
+                  color: Colors.white,
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -12,6 +12,7 @@ class SwiperView extends StatelessWidget {
     this.games,
     this.onGameChange,
     this.onSliderChange,
+    this.onGameTap,
   }) : super(key: key);
 
   final Game currentGame;
@@ -19,6 +20,7 @@ class SwiperView extends StatelessWidget {
   final List<Game> games;
   final Function onGameChange;
   final Function onSliderChange;
+  final Function onGameTap;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class SwiperView extends StatelessWidget {
         Stack(
           children: <Widget>[
             RightStats(selectedGame: currentGame),
-            GamesSwiper(size: size, games: games, onItemChange: onGameChange),
+            GamesSwiper(size: size, games: games, onItemChange: onGameChange, onGameTap: onGameTap),
           ],
         ),
         Text(currentGame.name, style: TextStyle(
@@ -82,7 +84,7 @@ class RightStats extends StatelessWidget {
             fontSize: 18,
             height: 0.5,
             color: Colors.grey,
-            fontWeight: FontWeight.w100
+            fontWeight: FontWeight.w300
           )),
           SizedBox(
             height: 35,
@@ -97,7 +99,7 @@ class RightStats extends StatelessWidget {
             height: 0.5,
             fontSize: 18,
             color: Colors.grey,
-            fontWeight: FontWeight.w100
+            fontWeight: FontWeight.w300
           )),
           SizedBox(
             height: 35,
