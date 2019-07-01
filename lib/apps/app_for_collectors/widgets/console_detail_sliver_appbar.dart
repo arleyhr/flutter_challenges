@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_challenges/apps/app_for_collectors/theme.dart';
 
 class ConsoleDetailSliverAppBar extends StatelessWidget {
   ConsoleDetailSliverAppBar({
@@ -22,7 +23,7 @@ class ConsoleDetailSliverAppBar extends StatelessWidget {
 
   Container _buildHeaderConsole(BuildContext context) {
     return Container(
-      color: Theme.of(context).primaryColor,
+      color: primaryColor,
       height: 110,
       child: Stack(
         alignment: Alignment.center,
@@ -31,7 +32,7 @@ class ConsoleDetailSliverAppBar extends StatelessWidget {
             children: <Widget>[
               Container(
                 height: 40.0,
-                color: Theme.of(context).primaryColor,
+                color: primaryColor,
               ),
               Container(
                 height: 70,
@@ -67,14 +68,14 @@ class ConsoleDetailSliverAppBar extends StatelessWidget {
           onPressed: setSwiperSelected,
           icon: Icon(Icons.view_carousel),
           iconSize: 35,
-          color: !isGridSelected ? Theme.of(context).primaryColor : Colors.grey,
+          color: !isGridSelected ? primaryColor : Colors.grey,
         ),
         SizedBox(),
         IconButton(
           onPressed: setGridSelected,
           icon: Icon(Icons.view_module),
           iconSize: 35,
-          color: isGridSelected ? Theme.of(context).primaryColor : Colors.grey,
+          color: isGridSelected ? primaryColor : Colors.grey,
         ),
       ],
     );
@@ -95,6 +96,7 @@ class ConsoleDetailSliverAppBar extends StatelessWidget {
     return SliverAppBar(
       elevation: 0,
       pinned: true,
+      backgroundColor: primaryColor,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[

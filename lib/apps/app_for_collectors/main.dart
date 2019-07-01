@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_challenges/apps/app_for_collectors/screens/console_detail.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/screens/games_tab.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/widgets/bottom_bar.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/widgets/game_tabs_sliver_appbar.dart';
 
-Color primaryColor = Color.fromRGBO(63, 68, 157, 1);
-Color secondaryColor = Color.fromRGBO(128, 240, 180, 1);
-
-class AppForCollectors extends StatefulWidget {
-  const AppForCollectors({Key key}) : super(key: key);
+class AppForCollectorsHome extends StatefulWidget {
+  const AppForCollectorsHome({
+    Key key,
+  }) : super(key: key);
 
   @override
-  _AppForCollectorsState createState() => _AppForCollectorsState();
+  _AppForCollectorsHomeState createState() => _AppForCollectorsHomeState();
 }
 
-class _AppForCollectorsState extends State<AppForCollectors> with SingleTickerProviderStateMixin {
+class _AppForCollectorsHomeState extends State<AppForCollectorsHome> with SingleTickerProviderStateMixin {
   TabController _tabController;
 
   @override
@@ -22,36 +20,6 @@ class _AppForCollectorsState extends State<AppForCollectors> with SingleTickerPr
     super.initState();
     _tabController = new TabController(vsync: this, initialIndex: 0, length: 3);
   }
-
-  @override
-  Widget build(BuildContext context) {
-    return  MaterialApp(
-      title: 'App For Collectors',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: primaryColor,
-        accentColor: secondaryColor,
-        tabBarTheme: TabBarTheme(
-          labelColor: secondaryColor,
-          unselectedLabelColor: Colors.white
-        ),
-      ),
-      home: ScaffoldHome(tabController: _tabController),
-      routes: {
-        'afc_home': (BuildContext context) => ScaffoldHome(tabController: _tabController),
-        'afc_games': (BuildContext context) => ConsoleDetail()
-      },
-    );
-  }
-}
-
-class ScaffoldHome extends StatelessWidget {
-  const ScaffoldHome({
-    Key key,
-    @required TabController tabController,
-  }) : _tabController = tabController, super(key: key);
-
-  final TabController _tabController;
 
   @override
   Widget build(BuildContext context) {

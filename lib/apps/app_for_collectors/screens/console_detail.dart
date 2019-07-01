@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_challenges/apps/app_for_collectors/widgets/bottom_bar.dart';
+import 'package:flutter_challenges/apps/app_for_collectors/screens/game_detail.dart';
+
+import 'package:flutter_challenges/routes.dart';
 
 import 'package:flutter_challenges/apps/app_for_collectors/models/console.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/models/game.dart';
+import 'package:flutter_challenges/apps/app_for_collectors/widgets/bottom_bar.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/widgets/console_detail_sliver_appbar.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/widgets/swiper_view.dart';
+
 
 class ConsoleDetailArguments {
   ConsoleDetailArguments({ this.console });
@@ -12,14 +16,14 @@ class ConsoleDetailArguments {
   Console console;
 }
 
-class ConsoleDetail extends StatefulWidget {
-  const ConsoleDetail({Key key}) : super(key: key);
+class AppForCollectorsConsole extends StatefulWidget {
+  const AppForCollectorsConsole({Key key}) : super(key: key);
 
   @override
-  _ConsoleDetailState createState() => _ConsoleDetailState();
+  _AppForCollectorsConsoleState createState() => _AppForCollectorsConsoleState();
 }
 
-class _ConsoleDetailState extends State<ConsoleDetail> {
+class _AppForCollectorsConsoleState extends State<AppForCollectorsConsole> {
   Console _console;
   Game _currentGame;
   bool _isGridSelected = false;
@@ -71,6 +75,9 @@ class _ConsoleDetailState extends State<ConsoleDetail> {
         _isGridSelected = false;
       });
     }
+    _onGameTap (int index) {
+      Navigator.pushNamed(context, appForCollectorsGame, arguments: GameArguments(selectedIndex: index, games: _games));
+    }
 
     return Scaffold(
       bottomNavigationBar: BottomBar(color: Colors.white),
@@ -93,6 +100,7 @@ class _ConsoleDetailState extends State<ConsoleDetail> {
               onGameChange: _onGameChange,
               size: size,
               onSliderChange: _onSliderChange,
+              onGameTap: _onGameTap,
             ),
           if (_isGridSelected)
             ...[
@@ -111,19 +119,27 @@ class _ConsoleDetailState extends State<ConsoleDetail> {
                 (BuildContext context, int index) {
                   final item = _games[index];
                   bool isPair = (index % 2 == 0);
-                  return Container(
-                    margin: EdgeInsets.only(
-                      left: isPair ? 20 : 0,
-                      right: !isPair ? 20 : 0,
-                    ),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: FadeInImage(
-                        placeholder: AssetImage('lib/apps/app_for_collectors/assets/placeholder.png'),
-                        image: NetworkImage(item.image, scale: 1.0),
-                        fit: BoxFit.cover,
+                  return InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, appForCollectorsGame, arguments: GameArguments(selectedIndex: index, games: _games));
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(
+                        left: isPair ? 20 : 0,
+                        right: !isPair ? 20 : 0,
                       ),
-                    )
+                      child: Hero(
+                        tag: 'game-${item.name}',
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: FadeInImage(
+                            placeholder: AssetImage('lib/apps/app_for_collectors/assets/placeholder.png'),
+                            image: NetworkImage(item.image, scale: 1.0),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      )
+                    ),
                   );
                 },
                 childCount: _games.length

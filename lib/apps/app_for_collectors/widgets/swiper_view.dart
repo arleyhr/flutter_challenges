@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/models/game.dart';
+import 'package:flutter_challenges/apps/app_for_collectors/theme.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/widgets/games_swiper.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/widgets/stars_rating.dart';
 
@@ -11,6 +12,7 @@ class SwiperView extends StatelessWidget {
     this.games,
     this.onGameChange,
     this.onSliderChange,
+    this.onGameTap,
   }) : super(key: key);
 
   final Game currentGame;
@@ -18,6 +20,7 @@ class SwiperView extends StatelessWidget {
   final List<Game> games;
   final Function onGameChange;
   final Function onSliderChange;
+  final Function onGameTap;
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +29,11 @@ class SwiperView extends StatelessWidget {
         Stack(
           children: <Widget>[
             RightStats(selectedGame: currentGame),
-            GamesSwiper(size: size, games: games, onItemChange: onGameChange),
+            GamesSwiper(size: size, games: games, onItemChange: onGameChange, onGameTap: onGameTap),
           ],
         ),
         Text(currentGame.name, style: TextStyle(
-          color: Theme.of(context).primaryColor,
+          color: primaryColor,
           fontSize: 20.0
         ), textAlign: TextAlign.center),
         SizedBox(
@@ -74,14 +77,14 @@ class RightStats extends StatelessWidget {
           IconButton(
             onPressed: (){},
             icon: Icon(
-              Icons.bubble_chart, size: 35, color: Theme.of(context).primaryColor
+              Icons.bubble_chart, size: 35, color: primaryColor
             ),
           ),
           Text('${selectedGame.percent}%', style: TextStyle(
             fontSize: 18,
             height: 0.5,
             color: Colors.grey,
-            fontWeight: FontWeight.w100
+            fontWeight: FontWeight.w300
           )),
           SizedBox(
             height: 35,
@@ -89,14 +92,14 @@ class RightStats extends StatelessWidget {
           IconButton(
             onPressed: (){},
             icon: Icon(
-              Icons.people, size: 35, color: Theme.of(context).primaryColor
+              Icons.people, size: 35, color: primaryColor
             ),
           ),
           Text(selectedGame.people.toString(), style: TextStyle(
             height: 0.5,
             fontSize: 18,
             color: Colors.grey,
-            fontWeight: FontWeight.w100
+            fontWeight: FontWeight.w300
           )),
           SizedBox(
             height: 35,
@@ -104,7 +107,7 @@ class RightStats extends StatelessWidget {
           IconButton(
             onPressed: (){},
             icon: Icon(
-              Icons.favorite_border, size: 35, color: Theme.of(context).primaryColor
+              Icons.favorite_border, size: 35, color: primaryColor
             ),
           )
         ],

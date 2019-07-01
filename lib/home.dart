@@ -7,20 +7,20 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Challenges',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Home'),
+          title: Text('Flutter Challenges'),
         ),
         body: Container(
           child: Center(
             child: FlatButton(
               onPressed: () {
-                Navigator.of(context).pushNamed(getRouteName(routeKeys.APP_FOR_COLLECTORS));
+                Navigator.of(context).pushNamed(appForCollectorsView);
               },
               child: Text('App For Collectors'),
             ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_challenges/routes.dart';
+
 import 'package:flutter_challenges/apps/app_for_collectors/models/console.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/screens/console_detail.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/widgets/console_card.dart';
@@ -9,7 +11,7 @@ class GamesTab extends StatelessWidget {
   final _placeholderButton = 1;
 
   _onConsolePressed({ BuildContext context, Console console }) {
-    Navigator.pushNamed(context, 'afc_games', arguments: ConsoleDetailArguments(console: console));
+    Navigator.pushNamed(context, appForCollectorsConsole, arguments: ConsoleDetailArguments(console: console));
   }
 
   @override

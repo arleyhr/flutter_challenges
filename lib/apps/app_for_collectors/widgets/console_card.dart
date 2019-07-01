@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/models/console.dart';
+import 'package:flutter_challenges/apps/app_for_collectors/theme.dart';
 
 class ConsoleCard extends StatefulWidget {
   const ConsoleCard({
@@ -48,7 +49,7 @@ class _ConsoleCardState extends State<ConsoleCard> {
           borderRadius: BorderRadius.circular(30),
           boxShadow: [
             BoxShadow(
-              color: Theme.of(context).primaryColor.withAlpha(60),
+              color: primaryColor.withAlpha(60),
               offset: Offset(0, _pressed ? 0 : 15),
               blurRadius: _pressed ? 0 : 20
             )
@@ -73,7 +74,7 @@ class _ConsoleCardState extends State<ConsoleCard> {
                   child: Text(
                     widget.item.name,
                     style: TextStyle(
-                      color: Theme.of(context).primaryColor,
+                      color: primaryColor,
                       fontSize: 18
                     )
                   ),
