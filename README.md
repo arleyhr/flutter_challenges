@@ -2,6 +2,8 @@
 
 > Collection of samples in flutter
 
+## 🚀 CI/CD with Codemagic
+
 [![Codemagic build status](https://api.codemagic.io/apps/5d06f17537a0955aad262769/5d10f16bb7ca78219e83c264/status_badge.svg)](https://codemagic.io/apps/5d06f17537a0955aad262769/5d10f16bb7ca78219e83c264/latest_build)
 
 ## 📱GET IT ON
@@ -17,5 +19,19 @@
 [🌌 Inspiration](https://dribbble.com/shots/6322484-App-for-collectors)|[🌌 Inspiration](https://www.uplabs.com/posts/food-order-detail-page-ui-for-app)|
 
 
-## LICENCE
+## ⚡️Getting Started
+
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our 
+[online documentation](https://flutter.dev/docs), which offers tutorials, 
+samples, guidance on mobile development, and a full API reference.
+
+
+## 👻 LICENCE
 [WTFPL](http://www.wtfpl.net/about/)
