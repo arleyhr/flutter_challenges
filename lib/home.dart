@@ -4,6 +4,10 @@ import 'package:flutter_challenges/routes.dart';
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key key}) : super(key: key);
 
+  _goToPage (context, page) {
+    Navigator.of(context).pushNamed(page);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,13 +21,17 @@ class MyHomePage extends StatelessWidget {
           title: Text('Flutter Challenges'),
         ),
         body: Container(
-          child: Center(
-            child: FlatButton(
-              onPressed: () {
-                Navigator.of(context).pushNamed(appForCollectorsView);
-              },
-              child: Text('App For Collectors'),
-            ),
+          child: ListView(
+            children: <Widget>[
+              FlatButton(
+                onPressed: () => _goToPage(context, appForCollectorsView),
+                child: Text('App For Collectors'),
+              ),
+              FlatButton(
+                onPressed: () => _goToPage(context, restaurantsDetailsReview),
+                child: Text('Restaurants Details Review'),
+              ),
+            ],
           ),
         ),
       ),

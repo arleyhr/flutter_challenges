@@ -29,6 +29,9 @@ class PlaceholderCard extends StatelessWidget {
           padding: EdgeInsets.all(10),
           onPressed: onPressed,
           child: DottedBorder(
+            dashPattern: [8, 5],
+            borderType: BorderType.RRect,
+            radius: Radius.circular(10),
             color: Colors.grey,
             child: Container(
               alignment: Alignment.center,

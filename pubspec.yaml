@@ -20,7 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  dotted_border:
+  dotted_border: 1.0.2
   flutter_swiper:
 
 dev_dependencies:
