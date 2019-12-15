@@ -5,7 +5,7 @@ class MenuItem {
   MenuItem({ this.id, this.name, this.image });
 }
 
-final imagePrefix = 'https://github.com/arleyhr/flutter_challenges/blob/develop/lib/apps/restaurant_details_review/assets/';
+final imagePrefix = 'https://github.com/arleyhr/flutter_challenges/blob/develop/restaurant_details_review/assets/';
 
 List<MenuItem> menuItems = [
   MenuItem(id: 1, name: 'Fries', image: '${imagePrefix}fries.png?raw=true'),
