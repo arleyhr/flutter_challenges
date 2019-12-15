@@ -1,4 +1,4 @@
-# FLUTTER CHALLENGES
+# 💥App For Collectors
 
 > UI based in shot
 

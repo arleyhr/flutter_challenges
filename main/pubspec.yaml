@@ -23,14 +23,20 @@ dependencies:
   dotted_border: 1.0.4
   flutter_swiper:
   fluro: "^1.5.1"
+  flare_flutter:
+  smart_flare:
 
-  app_for_collectors:
-    path: "../app_for_collectors"
   shared:
     path: "../shared"
 
+  app_for_collectors:
+    path: "../app_for_collectors"
+
   restaurant_details_review:
     path: "../restaurant_details_review"
+
+  multi_option_flare:
+    path: "../multi_option_flare"
 
 dev_dependencies:
   flutter_launcher_icons: "^0.7.2"
@@ -53,6 +59,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+   - assets/MultiOptionButton.flr
 
   # To add assets to your application, add an assets section, like this:
   # assets:
