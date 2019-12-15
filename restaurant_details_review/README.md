@@ -1,4 +1,4 @@
-# 💥FLUTTER CHALLENGES
+# 💥Restaurant Details Review
 
 > UI based in shot
 
