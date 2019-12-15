@@ -65,14 +65,28 @@ packages:
     source: hosted
     version: "2.1.3"
   dotted_border:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: dotted_border
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
-  fluro:
+  flare_dart:
     dependency: transitive
+    description:
+      name: flare_dart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.3.0"
+  flare_flutter:
+    dependency: "direct main"
+    description:
+      name: flare_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.8.1"
+  fluro:
+    dependency: "direct main"
     description:
       name: fluro
       url: "https://pub.dartlang.org"
@@ -130,13 +144,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.8"
-  multi_option_flare:
-    dependency: transitive
-    description:
-      path: "../multi_option_flare"
-      relative: true
-    source: path
-    version: "1.0.0+1"
   path:
     dependency: transitive
     description:
@@ -179,6 +186,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.5"
+  restaurant_details_review:
+    dependency: transitive
+    description:
+      path: "../restaurant_details_review"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   shared:
     dependency: transitive
     description:
@@ -191,6 +205,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  smart_flare:
+    dependency: "direct main"
+    description:
+      name: smart_flare
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.8"
   source_span:
     dependency: transitive
     description:

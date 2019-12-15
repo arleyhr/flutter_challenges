@@ -4,6 +4,7 @@ import 'package:flutter_challenges/home.dart';
 
 import 'package:app_for_collectors/routes.dart';
 import 'package:restaurant_details_review/routes.dart';
+import 'package:multi_option_flare/routes.dart';
 
 const String rootView = '/';
 
@@ -17,5 +18,6 @@ class Routes {
 
     new AppForCollectorsRoutes(router);
     new RestaurantDetailsReviewRoutes(router);
+    new MultiOptionFlareRoutes(router);
   }
 }
