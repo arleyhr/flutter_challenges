@@ -15,6 +15,7 @@ class RestaurantDetailsReview extends StatefulWidget {
 
 class _RestaurantDetailsReviewState extends State<RestaurantDetailsReview> {
   String _getImage (image) => 'https://github.com/arleyhr/flutter_challenges/blob/develop/lib/apps/restaurant_details_review/assets/$image?raw=true';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

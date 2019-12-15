@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_challenges/apps/restaurant_details_review/routes.dart';
 import 'package:flutter_challenges/config/application.dart';
-import 'package:flutter_challenges/config/routes.dart';
+
+import 'package:flutter_challenges/apps/app_for_collectors/routes.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key key}) : super(key: key);
@@ -25,11 +27,11 @@ class MyHomePage extends StatelessWidget {
           child: ListView(
             children: <Widget>[
               FlatButton(
-                onPressed: () => _goToPage(context, appForCollectorsView),
+                onPressed: () => _goToPage(context, AppForCollectorsRoutes.homePath),
                 child: Text('App For Collectors'),
               ),
               FlatButton(
-                onPressed: () => _goToPage(context, restaurantsDetailsReview),
+                onPressed: () => _goToPage(context, RestaurantDetailsReviewRoutes.homePath),
                 child: Text('Restaurants Details Review'),
               ),
             ],
