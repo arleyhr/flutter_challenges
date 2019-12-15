@@ -36,7 +36,7 @@ List<Game> games = [
   Game(
     id: 1,
     name: 'Metal Slug',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/MetalSlug1_cover.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/MetalSlug1_cover.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -45,7 +45,7 @@ List<Game> games = [
   Game(
     id: 2,
     name: 'Digimon Battle Spirit',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/digimon.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/digimon.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -54,7 +54,7 @@ List<Game> games = [
   Game(
     id: 3,
     name: 'Metroid: Zero Mission',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/metroid.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/metroid.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -63,7 +63,7 @@ List<Game> games = [
   Game(
     id: 4,
     name: 'Sonic Advance',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/sonic.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/sonic.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -72,7 +72,7 @@ List<Game> games = [
   Game(
     id: 5,
     name: 'The Legend of Zelda: The Minish Cap',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/zeldagb.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/zeldagb.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -82,7 +82,7 @@ List<Game> games = [
   Game(
     id: 6,
     name: 'Days Gone',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/daysgone.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/daysgone.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -91,7 +91,7 @@ List<Game> games = [
   Game(
     id: 7,
     name: 'Bloodborne',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/bloodborne.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/bloodborne.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -100,7 +100,7 @@ List<Game> games = [
   Game(
     id: 8,
     name: 'The Last of Us',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/tlou.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/tlou.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -109,7 +109,7 @@ List<Game> games = [
   Game(
     id: 9,
     name: 'The Last of Us Part II',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/tlou2.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/tlou2.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -118,7 +118,7 @@ List<Game> games = [
   Game(
     id: 10,
     name: 'God of War',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/gow.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/gow.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -127,7 +127,7 @@ List<Game> games = [
   Game(
     id: 11,
     name: 'Horizon Zero Dawn',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/horizon.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/horizon.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -136,7 +136,7 @@ List<Game> games = [
   Game(
     id: 12,
     name: 'Uncharted 4: A Thief\'s End',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/uncharted.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/uncharted.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -146,7 +146,7 @@ List<Game> games = [
   Game(
     id: 13,
     name: 'Yoshi\'s Crafted World',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/yoshi.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/yoshi.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -155,7 +155,7 @@ List<Game> games = [
   Game(
     id: 14,
     name: 'Super Mario Odyssey',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/mario-odyssey.jpeg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/mario-odyssey.jpeg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -164,7 +164,7 @@ List<Game> games = [
   Game(
     id: 15,
     name: 'Crash Team Racing Nitro-Fueled',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/crash.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/crash.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -173,7 +173,7 @@ List<Game> games = [
   Game(
     id: 16,
     name: 'The Legend of Zelda: Breath of the Wild',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/zelda.webp?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/zelda.webp?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -182,7 +182,7 @@ List<Game> games = [
   Game(
     id: 17,
     name: 'Mario + Rabbids Kingdom Battle',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/mario-rabbids.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/mario-rabbids.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -193,7 +193,7 @@ List<Game> games = [
   Game(
     id: 18,
     name: 'Gears of War 4',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/gears.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/gears.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -202,7 +202,7 @@ List<Game> games = [
   Game(
     id: 19,
     name: 'Halo: The Master Chief Collection',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/halo.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/halo.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -211,7 +211,7 @@ List<Game> games = [
   Game(
     id: 20,
     name: 'Assassin\'s Creed IV: Black Flag',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/black-flag.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/black-flag.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -220,7 +220,7 @@ List<Game> games = [
   Game(
     id: 21,
     name: 'Final Fantasy XV',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/final-fantasy-xv_3.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/final-fantasy-xv_3.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
@@ -229,7 +229,7 @@ List<Game> games = [
   Game(
     id: 22,
     name: 'Middle-earth: Shadow of War',
-    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/assets/shadow.jpg?raw=true',
+    image: 'https://github.com/arleyhr/flutter_challenges/blob/develop/app_for_collectors/lib/assets/shadow.jpg?raw=true',
     rating: randomNumber(min: minRating, max: maxRating),
     percent: randomNumber(min: minPercent, max: maxPercent),
     people: randomNumber(min: minPeople, max: maxPeople),
