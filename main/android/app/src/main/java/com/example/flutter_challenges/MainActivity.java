@@ -1,4 +1,4 @@
-package com.example.flutter_challenges;
+package com.arleyhr.flutter_challenges;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
