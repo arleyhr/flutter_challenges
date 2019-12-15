@@ -33,7 +33,7 @@ class GamesSwiper extends StatelessWidget {
           final Game item = _games[index];
           return InkWell(
             onTap: () {
-              onGameTap(index);
+              onGameTap(_games[index].id);
             },
             child: Container(
               decoration: BoxDecoration(

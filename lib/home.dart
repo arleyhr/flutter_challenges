@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_challenges/routes.dart';
+import 'package:flutter_challenges/config/application.dart';
+import 'package:flutter_challenges/config/routes.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key key}) : super(key: key);
 
   _goToPage (context, page) {
-    Navigator.of(context).pushNamed(page);
+    Application.router.navigateTo(context, page);
   }
 
   @override

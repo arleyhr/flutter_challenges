@@ -1,10 +1,10 @@
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_challenges/apps/app_for_collectors/screens/game_detail.dart';
 import 'package:flutter_challenges/home.dart';
-import 'package:flutter_challenges/apps/app_for_collectors/main.dart';
-import 'package:flutter_challenges/apps/app_for_collectors/screens/console_detail.dart';
 
-import 'apps/restaurant_details_review/main.dart';
+import 'package:flutter_challenges/apps/restaurant_details_review/main.dart';
+
+import 'package:flutter_challenges/apps/app_for_collectors/routes.dart';
 
 // Route contansts
 const String rootView = '/';
@@ -18,20 +18,6 @@ const String restaurantsDetailsReview = '/restaurants_details_review';
 
 Route generateRoute (RouteSettings settings) {
   switch (settings.name) {
-    case rootView:
-      return buildRoute(settings, MyHomePage());
-      break;
-// App for Collectors ===
-    case appForCollectorsView:
-      return buildRoute(settings, AppForCollectorsHome());
-      break;
-    case appForCollectorsConsole:
-      return buildRoute(settings, AppForCollectorsConsole());
-      break;
-    case appForCollectorsGame:
-      return buildRoute(settings, AppForCollectorsGame());
-      break;
-// === App for Collectors
 
 // Restaurants Details Review ===
     case restaurantsDetailsReview:
@@ -49,4 +35,17 @@ buildRoute(RouteSettings setting, Widget page) {
     settings: setting,
     builder: (BuildContext context) => page
   );
+}
+
+
+var rootViewHandler = Handler(handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+  return MyHomePage();
+});
+
+class Routes {
+  static void configureRoutes(Router router) {
+    router.define(rootView, handler: rootViewHandler);
+
+    new AppForCollectorsRoutes(router);
+  }
 }

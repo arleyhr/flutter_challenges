@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/models/game.dart';
 
-class GameArguments {
-  int selectedIndex;
-  List<Game> games;
-  GameArguments({ this.selectedIndex, this.games });
-}
-
 class AppForCollectorsGame extends StatefulWidget {
-  AppForCollectorsGame({ Key key }) : super(key: key);
+  final gameId;
+  AppForCollectorsGame({
+    Key key,
+    this.gameId
+  }) : super(key: key);
 
-  _AppForCollectorsGameState createState() => _AppForCollectorsGameState();
+  _AppForCollectorsGameState createState() => _AppForCollectorsGameState(gameId: this.gameId);
 }
 
 class _AppForCollectorsGameState extends State<AppForCollectorsGame> {
   PageController _pageController;
   List<Game> _games;
+  String gameId;
+
+  _AppForCollectorsGameState({ this.gameId });
 
   @override
   void initState() {
@@ -26,12 +27,15 @@ class _AppForCollectorsGameState extends State<AppForCollectorsGame> {
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    GameArguments arguments = ModalRoute.of(context).settings.arguments;
+    final game = games.firstWhere((g) => g.id.toString() == gameId);
+    final consoleGames = games.where((g) => g.consoleId.toString() == game.consoleId.toString()).toList();
 
-    _pageController = new PageController(viewportFraction: 1, initialPage: arguments.selectedIndex);
+    final initialPage = consoleGames.indexOf(game);
+
+    _pageController = new PageController(viewportFraction: 1, initialPage: initialPage);
 
     setState(() {
-      _games = arguments.games;
+      _games = consoleGames;
     });
 
   }

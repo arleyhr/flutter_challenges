@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_challenges/apps/app_for_collectors/screens/game_detail.dart';
+import 'package:flutter_challenges/config/application.dart';
 
-import 'package:flutter_challenges/routes.dart';
+import 'package:flutter_challenges/apps/app_for_collectors/routes.dart';
 
 import 'package:flutter_challenges/apps/app_for_collectors/models/console.dart';
 import 'package:flutter_challenges/apps/app_for_collectors/models/game.dart';
@@ -10,24 +10,25 @@ import 'package:flutter_challenges/apps/app_for_collectors/widgets/console_detai
 import 'package:flutter_challenges/apps/app_for_collectors/widgets/swiper_view.dart';
 
 
-class ConsoleDetailArguments {
-  ConsoleDetailArguments({ this.console });
-
-  Console console;
-}
-
 class AppForCollectorsConsole extends StatefulWidget {
-  const AppForCollectorsConsole({Key key}) : super(key: key);
+  final consoleId;
+  AppForCollectorsConsole({
+    Key key,
+    this.consoleId,
+  }) : super(key: key);
 
   @override
-  _AppForCollectorsConsoleState createState() => _AppForCollectorsConsoleState();
+  _AppForCollectorsConsoleState createState() => _AppForCollectorsConsoleState(consoleId: this.consoleId);
 }
 
 class _AppForCollectorsConsoleState extends State<AppForCollectorsConsole> {
+  String consoleId;
   Console _console;
   Game _currentGame;
   bool _isGridSelected = false;
   List<Game> _games = List();
+
+  _AppForCollectorsConsoleState({ this.consoleId });
 
   @override
   void initState() {
@@ -36,10 +37,9 @@ class _AppForCollectorsConsoleState extends State<AppForCollectorsConsole> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    ConsoleDetailArguments arguments = ModalRoute.of(context).settings.arguments;
-    Console console = arguments.console;
+    Console console = consoles.firstWhere((c) => c.id.toString() == consoleId);
 
-    List<Game> gamesList = games.where((game) => game.consoleId == console.id).toList();
+    List<Game> gamesList = games.where((game) => game.consoleId.toString() == consoleId).toList();
 
     setState(() {
       _console = console;
@@ -75,8 +75,8 @@ class _AppForCollectorsConsoleState extends State<AppForCollectorsConsole> {
         _isGridSelected = false;
       });
     }
-    _onGameTap (int index) {
-      Navigator.pushNamed(context, appForCollectorsGame, arguments: GameArguments(selectedIndex: index, games: _games));
+    _onGameTap (gameId) {
+      Application.router.navigateTo(context, AppForCollectorsRoutes.getGamePath(gameId: gameId));
     }
 
     return Scaffold(
@@ -121,7 +121,7 @@ class _AppForCollectorsConsoleState extends State<AppForCollectorsConsole> {
                   bool isPair = (index % 2 == 0);
                   return InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, appForCollectorsGame, arguments: GameArguments(selectedIndex: index, games: _games));
+                      _onGameTap(_games[index].id);
                     },
                     child: Container(
                       margin: EdgeInsets.only(

@@ -14,14 +14,15 @@ description: A new Flutter project.
 version: 1.0.0+2
 
 environment:
-  sdk: ">=2.3.0-dev.0.1 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  dotted_border: 1.0.2
+  dotted_border: 1.0.4
   flutter_swiper:
+  fluro: "^1.5.1"
 
 dev_dependencies:
   flutter_launcher_icons: "^0.7.2"
