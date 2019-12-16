@@ -193,10 +193,10 @@ packages:
       relative: true
     source: path
     version: "1.0.0+1"
-  shared:
+  shared_app:
     dependency: transitive
     description:
-      path: "../shared"
+      path: "../shared_app"
       relative: true
     source: path
     version: "1.0.0+1"

@@ -179,10 +179,10 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.5"
-  shared:
+  shared_app:
     dependency: transitive
     description:
-      path: "../shared"
+      path: "../shared_app"
       relative: true
     source: path
     version: "1.0.0+1"
