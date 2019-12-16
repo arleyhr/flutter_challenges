@@ -1,4 +1,4 @@
-package com.arleyhr.flutter_challenges.shared
+package com.arleyhr.flutter_challenges.shared_app
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

@@ -26,8 +26,8 @@ dependencies:
   flare_flutter:
   smart_flare:
 
-  shared:
-    path: "../shared"
+  shared_app:
+    path: "../shared_app"
 
   app_for_collectors:
     path: "../app_for_collectors"

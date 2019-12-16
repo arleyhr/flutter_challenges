@@ -1,8 +1,8 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:shared/application.dart';
+import 'package:shared_app/application.dart';
 
-import 'package:shared/routes.dart';
+import 'package:shared_app/routes.dart';
 
 void main() => runApp(MyApp());
 
