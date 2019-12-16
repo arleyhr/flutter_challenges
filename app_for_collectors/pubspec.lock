@@ -64,6 +64,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  flare_dart:
+    dependency: transitive
+    description:
+      name: flare_dart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.3.0"
+  flare_flutter:
+    dependency: transitive
+    description:
+      name: flare_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.8.1"
   fluro:
     dependency: "direct main"
     description:
@@ -179,10 +193,10 @@ packages:
       relative: true
     source: path
     version: "1.0.0+1"
-  shared:
+  shared_app:
     dependency: "direct main"
     description:
-      path: "../shared"
+      path: "../shared_app"
       relative: true
     source: path
     version: "1.0.0+1"
@@ -191,6 +205,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  smart_flare:
+    dependency: transitive
+    description:
+      name: smart_flare
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.8"
   source_span:
     dependency: transitive
     description:

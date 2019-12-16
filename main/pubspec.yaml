@@ -22,9 +22,11 @@ dependencies:
 
   dotted_border: 1.0.4
   flutter_swiper:
-  fluro: "^1.5.1"
+  fluro:
   flare_flutter:
   smart_flare:
+  transparent_image:
+  camera:
 
   shared_app:
     path: "../shared_app"
@@ -37,6 +39,9 @@ dependencies:
 
   multi_option_flare:
     path: "../multi_option_flare"
+
+  android_whatsapp:
+    path: "../android_whatsapp"
 
 dev_dependencies:
   flutter_launcher_icons: "^0.7.2"

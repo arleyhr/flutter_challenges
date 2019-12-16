@@ -14,7 +14,7 @@ description: A new Flutter project.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.4.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -24,6 +24,14 @@ dependencies:
 
   flutter_challenges:
     path: "../main"
+  app_for_collectors:
+    path: "../app_for_collectors"
+  restaurant_details_review:
+    path: "../restaurant_details_review"
+  multi_option_flare:
+    path: "../multi_option_flare"
+  android_whatsapp:
+    path: "../android_whatsapp"
 
 dev_dependencies:
   flutter_test:
