@@ -20,13 +20,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-  fluro: "^1.5.1"
+  fluro:
   flutter_swiper:
 
   flutter_challenges:
     path: "../main"
-  shared:
-    path: "../shared"
+  shared_app:
+    path: "../shared_app"
 
 
 dev_dependencies:

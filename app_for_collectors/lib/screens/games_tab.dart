@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shared/application.dart';
+import 'package:shared_app/application.dart';
 
 import 'package:app_for_collectors/routes.dart';
 

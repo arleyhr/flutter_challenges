@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
+import 'package:shared_app/application.dart';
 import 'package:multi_option_flare/routes.dart';
 import 'package:restaurant_details_review/routes.dart';
-import 'package:shared/application.dart';
-
 import 'package:app_for_collectors/routes.dart';
+import 'package:android_whatsapp/routes.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key key}) : super(key: key);
@@ -38,6 +39,10 @@ class MyHomePage extends StatelessWidget {
               FlatButton(
                 onPressed: () => _goToPage(context, MultiOptionFlareRoutes.homePath),
                 child: Text('Multi Option Flare Animation'),
+              ),
+              FlatButton(
+                onPressed: () => _goToPage(context, AndroidWhatsappRoutes.homePath),
+                child: Text('Android Whatsapp'),
               ),
             ],
           ),
