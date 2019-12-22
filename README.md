@@ -4,7 +4,7 @@
 
 ## 🚀 CI/CD with Codemagic
 
-[![Codemagic build status](https://api.codemagic.io/apps/5d06f17537a0955aad262769/5d10f16bb7ca78219e83c264/status_badge.svg)](https://codemagic.io/apps/5d06f17537a0955aad262769/5d10f16bb7ca78219e83c264/latest_build)
+[![Codemagic build status](https://api.codemagic.io/apps/5d06f17537a0955aad262769/5df938edfd2c8541ccd194d5/status_badge.svg)](https://codemagic.io/apps/5d06f17537a0955aad262769/5df938edfd2c8541ccd194d5/latest_build)
 
 ## 📱GET IT ON
 
