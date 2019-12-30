@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   fluro:
+  google_fonts:
 
 dev_dependencies:
   flutter_test:

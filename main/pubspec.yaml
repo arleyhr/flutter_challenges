@@ -27,6 +27,7 @@ dependencies:
   smart_flare:
   transparent_image:
   camera:
+  google_fonts:
 
   shared_app:
     path: "../shared_app"
