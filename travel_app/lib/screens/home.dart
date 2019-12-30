@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/utils/images.dart';
+import 'package:travel_app/widgets/buttons_section.dart';
 import 'package:travel_app/widgets/header.dart';
 import 'package:travel_app/widgets/places_swiper.dart';
 import 'package:travel_app/widgets/theme_app.dart';
@@ -21,7 +22,7 @@ class _TravelAppHomeState extends State<TravelAppHome> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    // _preloadImages();
+    _preloadImages();
   }
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,8 @@ class _TravelAppHomeState extends State<TravelAppHome> {
         body: ListView(
           children: <Widget>[
             Header(),
-            PlacesSwiper()
+            PlacesSwiper(),
+            ButtonsSection()
           ],
         ),
       ),
