@@ -32,6 +32,8 @@ dependencies:
     path: "../multi_option_flare"
   android_whatsapp:
     path: "../android_whatsapp"
+  travel_app:
+    path: "../travel_app"
 
 dev_dependencies:
   flutter_test:

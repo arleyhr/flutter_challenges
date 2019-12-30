@@ -44,7 +44,7 @@ packages:
     source: hosted
     version: "1.0.5"
   camera:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: camera
       url: "https://pub.dartlang.org"
@@ -79,7 +79,7 @@ packages:
     source: hosted
     version: "2.1.3"
   dotted_border:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: dotted_border
       url: "https://pub.dartlang.org"
@@ -93,7 +93,7 @@ packages:
     source: hosted
     version: "2.3.2"
   flare_flutter:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: flare_flutter
       url: "https://pub.dartlang.org"
@@ -111,13 +111,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_launcher_icons:
-    dependency: "direct dev"
+  flutter_challenges:
+    dependency: "direct main"
     description:
-      name: flutter_launcher_icons
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.7.4"
+      path: "../main"
+      relative: true
+    source: path
+    version: "1.0.0+32"
   flutter_page_indicator:
     dependency: transitive
     description:
@@ -126,7 +126,7 @@ packages:
     source: hosted
     version: "0.0.3"
   flutter_swiper:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: flutter_swiper
       url: "https://pub.dartlang.org"
@@ -214,20 +214,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0+1"
-  shared_app:
-    dependency: "direct main"
-    description:
-      path: "../shared_app"
-      relative: true
-    source: path
-    version: "1.0.0+1"
   sky_engine:
     dependency: transitive
     description: flutter
     source: sdk
     version: "0.0.99"
   smart_flare:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: smart_flare
       url: "https://pub.dartlang.org"
@@ -283,7 +276,7 @@ packages:
     source: hosted
     version: "0.1.6"
   transparent_image:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: transparent_image
       url: "https://pub.dartlang.org"
@@ -317,13 +310,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.5.0"
-  yaml:
-    dependency: transitive
-    description:
-      name: yaml
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.2.0"
 sdks:
   dart: ">=2.4.0 <3.0.0"
   flutter: ">=1.10.0 <2.0.0"
