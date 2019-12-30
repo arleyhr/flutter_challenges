@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:travel_app/utils/images.dart';
+import 'package:travel_app/widgets/bottom_bar.dart';
 import 'package:travel_app/widgets/buttons_section.dart';
 import 'package:travel_app/widgets/header.dart';
 import 'package:travel_app/widgets/places_swiper.dart';
@@ -29,13 +31,19 @@ class _TravelAppHomeState extends State<TravelAppHome> {
   Widget build(BuildContext context) {
     return ThemeTravelApp(
       child: Scaffold(
-        body: ListView(
-          children: <Widget>[
-            Header(),
-            PlacesSwiper(),
-            ButtonsSection(),
-            RelatedPlacesSwiper()
-          ],
+        body: Stack(
+          children: <Widget> [
+            ListView(
+              children: <Widget>[
+                Header(),
+                PlacesSwiper(),
+                ButtonsSection(),
+                RelatedPlacesSwiper(),
+                SizedBox(height: 68)
+              ],
+            ),
+            BottomBar()
+          ]
         ),
       ),
     );
