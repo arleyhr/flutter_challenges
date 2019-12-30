@@ -29,3 +29,11 @@ var travelAppImages = {
   "orion-sun-lounger": NetworkImage(travelAppImagesList["orion-sun-lounger"]),
   "snow": NetworkImage(travelAppImagesList["snow"]),
 };
+
+
+var travelAppPlaces = [
+  travelAppImagesList["slider1"],
+  travelAppImagesList["slider2"],
+  travelAppImagesList["slider3"],
+  travelAppImagesList["slider4"]
+];

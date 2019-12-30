@@ -1,31 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/utils/colors.dart';
 import 'package:travel_app/utils/images.dart';
-
-const gray = Color(0xFF5E5E5E);
-
 class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 44),
+      padding: EdgeInsets.only(top: 24, left: 24, right: 24),
       child: Column(
         children: <Widget>[
           Container(
             alignment: Alignment.centerLeft,
-            child: Text("Search", style: TextStyle(color: Color(0xFFA1A1A1), fontSize: 16)),
+            child: Text("Search", style: TextStyle(color: travelAppColors["lightgray"], fontSize: 16)),
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text("Destination", style: TextStyle(
-                color: gray,
+                color: travelAppColors['gray'],
                 fontSize: 22,
                 fontWeight: FontWeight.w600,
                 letterSpacing: 3
               )),
               Container(
                 margin: EdgeInsets.only(left: 5),
-                child: Icon(Icons.search, size: 25, color: gray),
+                child: Icon(Icons.search, size: 25, color: travelAppColors['gray']),
               ),
               Expanded(
                 child: Container(

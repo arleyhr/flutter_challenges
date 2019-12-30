@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/utils/images.dart';
 import 'package:travel_app/widgets/header.dart';
+import 'package:travel_app/widgets/places_swiper.dart';
 import 'package:travel_app/widgets/theme_app.dart';
 
 
@@ -27,9 +28,9 @@ class _TravelAppHomeState extends State<TravelAppHome> {
     return ThemeTravelApp(
       child: Scaffold(
         body: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 24),
           children: <Widget>[
-            Header()
+            Header(),
+            PlacesSwiper()
           ],
         ),
       ),
