@@ -3,6 +3,7 @@ import 'package:travel_app/utils/images.dart';
 import 'package:travel_app/widgets/buttons_section.dart';
 import 'package:travel_app/widgets/header.dart';
 import 'package:travel_app/widgets/places_swiper.dart';
+import 'package:travel_app/widgets/related_places_swiper.dart';
 import 'package:travel_app/widgets/theme_app.dart';
 
 
@@ -32,7 +33,8 @@ class _TravelAppHomeState extends State<TravelAppHome> {
           children: <Widget>[
             Header(),
             PlacesSwiper(),
-            ButtonsSection()
+            ButtonsSection(),
+            RelatedPlacesSwiper()
           ],
         ),
       ),

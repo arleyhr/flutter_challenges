@@ -37,3 +37,12 @@ var travelAppPlaces = [
   travelAppImagesList["slider3"],
   travelAppImagesList["slider4"]
 ];
+
+var travelAppRelatedPlaces = [
+  travelAppImagesList["slider6"],
+  travelAppImagesList["slider5"],
+  travelAppImagesList["slider4"],
+  travelAppImagesList["slider1"],
+  travelAppImagesList["slider2"],
+  travelAppImagesList["slider3"],
+];
