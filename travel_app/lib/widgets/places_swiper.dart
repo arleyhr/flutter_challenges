@@ -15,7 +15,7 @@ class PlacesSwiper extends StatelessWidget {
       height: 410.0,
       child: Swiper(
         itemCount: travelAppPlaces.length,
-        viewportFraction: 0.8,
+        viewportFraction: 0.85,
         scale: 0.9,
         pagination: SwiperPagination(
           margin: EdgeInsets.only(top: 80),
@@ -52,9 +52,9 @@ class PlacesSwiper extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.bottomCenter,
                     child: FractionallySizedBox(
-                      widthFactor: 0.8,
+                      widthFactor: 0.88,
                       child: Container(
-                        padding: EdgeInsets.only(top: 10, left: 16, right: 16, bottom: 10),
+                        padding: EdgeInsets.only(top: 15, left: 16, right: 16, bottom: 10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.white,
@@ -62,15 +62,19 @@ class PlacesSwiper extends StatelessWidget {
                             BoxShadow(color: Colors.black12, offset: Offset(0, 10), blurRadius: 10)
                           ]
                         ),
-                        height: 101,
+                        height: 95,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text("Bora Bora Beach", style: TextStyle(color: travelAppColors["gray"], height: 2.4)),
-                            Text(
-                              "Lorem ipsum dolor sit ame t, consectetur sed do eiusmod tempor incididunt ut...",
-                              maxLines: 2,
-                              style: TextStyle(fontSize: 10, height: 1.5, color: travelAppColors["lightgray"], fontFamily: "Roboto"))
+                            Text("Bora Bora Beach", style: TextStyle(color: travelAppColors["gray"])),
+                            SizedBox(height: 4),
+                            FractionallySizedBox(
+                              widthFactor: 0.9,
+                              child: Text(
+                                "Lorem ipsum dolor sit ame t, consectetur sed do eiusmod tempor incididunt ut...",
+                                maxLines: 2,
+                                style: TextStyle(fontSize: 10, height: 1.5, color: travelAppColors["lightgray"], fontFamily: "Roboto")),
+                            )
                           ],
                         ),
                       ),

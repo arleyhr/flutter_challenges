@@ -14,7 +14,7 @@ class RelatedPlacesSwiper extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemBuilder: (BuildContext context, index) {
           return Container(
-            margin: EdgeInsets.symmetric(horizontal: 10),
+            margin: EdgeInsets.only(left: index == 0 ? 20 : 10, right: 10),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: Container(

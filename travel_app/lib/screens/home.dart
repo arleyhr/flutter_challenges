@@ -39,7 +39,7 @@ class _TravelAppHomeState extends State<TravelAppHome> {
                 PlacesSwiper(),
                 ButtonsSection(),
                 RelatedPlacesSwiper(),
-                SizedBox(height: 68)
+                SizedBox(height: 100)
               ],
             ),
             BottomBar()

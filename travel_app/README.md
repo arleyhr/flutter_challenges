@@ -1,16 +1,19 @@
-# travel_app
+# 💥Travel App
 
-A new Flutter project.
+> UI based in shot
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+|Flutter View 1|Flutter View 2|
+|--|--|
+|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577812825/flutter/travel-app/flutter-1_zxphbu.png' />|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577812825/flutter/travel-app/flutter-2_vucwkd.png' />|
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> Shot
+
+|Original shot 1|Original shot 2|
+|--|--|
+|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577812820/flutter/travel-app/original-1_e8kgtb.png' />|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577812822/flutter/travel-app/original-2_y2g6lv.png' />|
+
+
+### Inspiration: [https://uplabs.com](https://uplabs.com)
