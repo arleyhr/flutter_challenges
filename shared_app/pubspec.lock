@@ -2,14 +2,14 @@
 # See https://dart.dev/tools/pub/glossary#lockfile
 packages:
   android_whatsapp:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../android_whatsapp"
       relative: true
     source: path
     version: "1.0.0+1"
   app_for_collectors:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../app_for_collectors"
       relative: true
@@ -112,7 +112,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_challenges:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../main"
       relative: true
@@ -126,7 +126,7 @@ packages:
     source: hosted
     version: "0.0.3"
   flutter_swiper:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: flutter_swiper
       url: "https://pub.dartlang.org"
@@ -137,27 +137,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  google_fonts:
-    dependency: "direct main"
-    description:
-      name: google_fonts
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.0"
-  http:
-    dependency: transitive
-    description:
-      name: http
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.12.0+3"
-  http_parser:
-    dependency: transitive
-    description:
-      name: http_parser
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.1.3"
   image:
     dependency: transitive
     description:
@@ -180,7 +159,7 @@ packages:
     source: hosted
     version: "1.1.8"
   multi_option_flare:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../multi_option_flare"
       relative: true
@@ -207,13 +186,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.4"
-  path_provider:
-    dependency: transitive
-    description:
-      name: path_provider
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.5.1"
   pedantic:
     dependency: transitive
     description:
@@ -228,13 +200,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.4.0"
-  platform:
-    dependency: transitive
-    description:
-      name: platform
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.2.1"
   quiver:
     dependency: transitive
     description:
@@ -243,16 +208,9 @@ packages:
     source: hosted
     version: "2.0.5"
   restaurant_details_review:
-    dependency: transitive
-    description:
-      path: "../restaurant_details_review"
-      relative: true
-    source: path
-    version: "1.0.0+1"
-  shared_app:
     dependency: "direct main"
     description:
-      path: "../shared_app"
+      path: "../restaurant_details_review"
       relative: true
     source: path
     version: "1.0.0+1"
@@ -324,6 +282,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  travel_app:
+    dependency: "direct main"
+    description:
+      path: "../travel_app"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   typed_data:
     dependency: transitive
     description:

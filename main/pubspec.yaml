@@ -27,6 +27,7 @@ dependencies:
   smart_flare:
   transparent_image:
   camera:
+  google_fonts:
 
   shared_app:
     path: "../shared_app"
@@ -42,6 +43,9 @@ dependencies:
 
   android_whatsapp:
     path: "../android_whatsapp"
+
+  travel_app:
+    path: "../travel_app"
 
 dev_dependencies:
   flutter_launcher_icons: "^0.7.2"
