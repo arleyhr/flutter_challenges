@@ -19,9 +19,9 @@ class TravelAppDetailHeader extends SliverPersistentHeaderDelegate {
           left: 0,
           bottom: -1,
           child: Container(
-            height: 30,
+            height: 40,
             child: ClipRRect(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(35)),
+              borderRadius: BorderRadius.vertical(top: Radius.circular(40)),
               child: Container(
                 color: Colors.white,
                 child: null,
@@ -34,7 +34,7 @@ class TravelAppDetailHeader extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get maxExtent => 400;
+  double get maxExtent => 490;
 
   @override
   double get minExtent => 0;

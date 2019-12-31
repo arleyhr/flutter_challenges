@@ -4,16 +4,14 @@
 
 
 
-|Flutter View 1|Flutter View 2|
+|Flutter View 1|Original shot 1|
 |--|--|
-|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577812825/flutter/travel-app/flutter-1_zxphbu.png' />|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577812825/flutter/travel-app/flutter-2_vucwkd.png' />|
+|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577812825/flutter/travel-app/flutter-1_zxphbu.png' width="400px" />|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577812820/flutter/travel-app/original-1_e8kgtb.png' width="400px" />|
 
 
-> Shot
-
-|Original shot 1|Original shot 2|
+|Flutter View 2|Original shot 2|
 |--|--|
-|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577812820/flutter/travel-app/original-1_e8kgtb.png' />|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577812822/flutter/travel-app/original-2_y2g6lv.png' />|
+|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577813931/flutter/travel-app/flutter-2_s0xs8u.png' width="400px" />|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577812822/flutter/travel-app/original-2_y2g6lv.png' width="400px" />|
 
 
 ### Inspiration: [https://uplabs.com](https://uplabs.com)
