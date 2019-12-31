@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 
 
 class RoundedGradientButton extends StatefulWidget {
@@ -25,7 +24,7 @@ class _RoundedGradientButtonState extends State<RoundedGradientButton> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: widget.onTap,
       onTapDown: (_) {
         setState(() {
           isPressed = true;

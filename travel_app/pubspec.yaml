@@ -13,6 +13,9 @@ dependencies:
   google_fonts:
   flutter_swiper:
 
+  shared_app:
+    path: ../shared_app
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
