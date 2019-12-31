@@ -90,7 +90,7 @@ class TravelAppDetail extends StatelessWidget {
                                   color: travelAppColors["lightgray"],
                                   fontSize: 13,
                                   letterSpacing: 1.2,
-                                  height: 1.5
+                                  height: 1.8
                                 )
                               ),
                               TextSpan(

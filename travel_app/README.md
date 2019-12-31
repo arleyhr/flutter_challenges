@@ -11,7 +11,7 @@
 
 |Flutter View 2|Original shot 2|
 |--|--|
-|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577813931/flutter/travel-app/flutter-2_s0xs8u.png' width="400px" />|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577812822/flutter/travel-app/original-2_y2g6lv.png' width="400px" />|
+|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577814828/flutter/travel-app/flutter-2_yohcwe.png' width="400px" />|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577812822/flutter/travel-app/original-2_y2g6lv.png' width="400px" />|
 
 
 ### Inspiration: [https://uplabs.com](https://uplabs.com)
