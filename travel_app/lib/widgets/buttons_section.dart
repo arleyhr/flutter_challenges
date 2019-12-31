@@ -54,14 +54,14 @@ class ButtonsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 25),
+      margin: EdgeInsets.only(top: 15),
       child: Column(
         children: <Widget>[
           Text("Explore nearby", style: TextStyle(
-            fontSize: 22,
+            fontSize: 19,
             color: travelAppColors["gray"],
             fontWeight: FontWeight.w600,
-            letterSpacing: 1.5
+            letterSpacing: 2.8
           )),
           SizedBox(height: 20),
           Row(

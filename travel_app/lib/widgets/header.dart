@@ -5,19 +5,20 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 24, left: 24, right: 24),
+      padding: EdgeInsets.only(top: 0, left: 24, right: 24),
       child: Column(
         children: <Widget>[
           Container(
+            margin: EdgeInsetsDirectional.only(bottom: 6),
             alignment: Alignment.centerLeft,
-            child: Text("Search", style: TextStyle(color: travelAppColors["lightgray"], fontSize: 16)),
+            child: Text("Search", style: TextStyle(color: travelAppColors["lightgray"], fontSize: 12, letterSpacing: 1.3)),
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text("Destination", style: TextStyle(
                 color: travelAppColors['gray'],
-                fontSize: 22,
+                fontSize: 21,
                 fontWeight: FontWeight.w600,
                 letterSpacing: 3
               )),
@@ -30,10 +31,10 @@ class Header extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
-                      Image.network(travelAppImagesList['menu'], height: 21),
+                      Image.network(travelAppImagesList['menu'], height: 18),
                       SizedBox(width: 25),
                       CircleAvatar(
-                        radius: 20,
+                        radius: 14,
                         backgroundImage: NetworkImage("https://i.pravatar.cc/50"),
                       )
                     ],

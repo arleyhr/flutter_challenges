@@ -38,12 +38,13 @@ class TravelAppDetail extends StatelessWidget {
                           padding: EdgeInsets.symmetric(horizontal: 20),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  Text("Bora Bora Beach", style: TextStyle(fontSize: 21, fontWeight: FontWeight.w600, letterSpacing: 1.5, color: travelAppColors["gray"])),
+                                  Text("Bora Bora Beach", style: TextStyle(fontSize: 19, fontWeight: FontWeight.w600, letterSpacing: 1.5, color: travelAppColors["gray"])),
+                                  SizedBox(height: 5),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: <Widget>[
@@ -51,10 +52,8 @@ class TravelAppDetail extends StatelessWidget {
                                       RichText(
                                         text: TextSpan(
                                           children: [
-                                            TextSpan(text: "   3.8   ", style: TextStyle(color: travelAppColors["gray"], fontSize: 13 )),
-                                            TextSpan(text: "( 450 ", style: TextStyle(color: travelAppColors["lightgray"], fontSize: 11)),
-                                            TextSpan(text: "Reviews ", style: TextStyle(color: travelAppColors["lightgray"], fontStyle: FontStyle.italic)),
-                                            TextSpan(text: ")", style: TextStyle(color: travelAppColors["lightgray"]))
+                                            TextSpan(text: "   3.8   ", style: TextStyle(color: travelAppColors["gray"], fontSize: 12 )),
+                                            TextSpan(text: "( 450 Reviews )", style: TextStyle(color: travelAppColors["lightgray"], fontStyle: FontStyle.italic, fontSize: 11)),
                                           ]
                                         ),
                                       ),
@@ -78,7 +77,7 @@ class TravelAppDetail extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: 14),
                         Padding(
                           padding: EdgeInsets.only(left: 20, right: 40),
                           child: RichText(
@@ -91,7 +90,7 @@ class TravelAppDetail extends StatelessWidget {
                                 TextSpan(
                                   text: 'Lorem ipsum dolor sit ame t, consectetur sed do eiusmod tempor incididuntgfgnt.Lorem ipsum is placeholder text commonly used inu the graphic, print, and publishing industries foruu previewing layouts and visual mockups...   ',
                                   style: TextStyle(
-                                    color: travelAppColors["gray"],
+                                    color: travelAppColors["lightgray"],
                                     fontSize: 13,
                                     letterSpacing: 1.2,
                                     height: 1.5
@@ -117,13 +116,13 @@ class TravelAppDetail extends StatelessWidget {
                                   Text("Near by you",
                                     style: TextStyle(
                                       color: travelAppColors["gray"],
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w600
                                     )
                                   ),
                                   Container(
                                     height: 3,
-                                    width: 96,
+                                    width: 88,
                                     margin: EdgeInsetsDirectional.only(top: 3),
                                     decoration: BoxDecoration(
                                       gradient: LinearGradient(
@@ -139,21 +138,22 @@ class TravelAppDetail extends StatelessWidget {
                               Text("Similar",
                                 style: TextStyle(
                                   color: travelAppColors["gray"],
-                                  fontSize: 16,
+                                  fontSize: 15,
                                   fontWeight: FontWeight.w600
                                 )
                               ),
                               Text("Popular",
                                 style: TextStyle(
                                   color: travelAppColors["gray"],
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
                                 )
                               ),
                             ],
                           ),
                         ),
                         RelatedPlacesSwiper(),
+                        SizedBox(height: 40)
                       ],
                     ),
                   )
