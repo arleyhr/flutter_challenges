@@ -30,7 +30,7 @@ List apps = [
     "icon": Icons.chat_bubble_outline
   },
   {
-    "name": "Travel app",
+    "name": "Tourism App Concept",
     "path": TravelAppRoutes.homePath,
     "icon": Icons.local_airport
   },
