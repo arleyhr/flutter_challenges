@@ -24,7 +24,7 @@
 |<img src='https://github.com/arleyhr/flutter_challenges/blob/develop/multi_option_flare/screenshots/demo.gif?raw=true' width='360' />|<img src='https://github.com/arleyhr/flutter_challenges/blob/develop/android_whatsapp/screenshots/app.gif?raw=true' width='360' />
 [🌌 Inspiration](https://rive.app/a/danemackier/files/flare/multioptionbutton/preview)|[]()|
 
-|[⚡️Travel App](https://github.com/arleyhr/flutter_challenges/tree/develop/travel_app)| [⚡️]()|
+|[⚡️Tourism App Concept](https://github.com/arleyhr/flutter_challenges/tree/develop/travel_app)| [⚡️]()|
 |--|--|
 |<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577809900/flutter/travel-app/demo_bpzzdm.gif' width='360' />|
 [🌌 Inspiration](https://www.uplabs.com/)|[]()|

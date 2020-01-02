@@ -41,7 +41,7 @@ class _ChatDetailState extends State<ChatDetail> {
         body: Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage("https://github.com/arleyhr/flutter_challenges/blob/develop/android_whatsapp/lib/assets/background.png"),
+                image: NetworkImage("https://github.com/arleyhr/flutter_challenges/blob/develop/android_whatsapp/lib/assets/background.png?raw=true"),
                 fit: BoxFit.cover,
               ),
             ),
