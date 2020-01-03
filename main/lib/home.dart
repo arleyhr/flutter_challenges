@@ -34,6 +34,14 @@ List apps = [
     "path": TravelAppRoutes.homePath,
     "icon": Icons.local_airport
   },
+  {
+    "name": "Ticket Reservation Interaction",
+    "path": null,
+    "icon": Icons.movie,
+    "navigate": (context) {
+
+    }
+  },
 ];
 
 class MyHomePage extends StatelessWidget {
@@ -64,7 +72,7 @@ class MyHomePage extends StatelessWidget {
 
               return ListTile(
                 title: Text(item['name']),
-                onTap: () => _goToPage(context, item['path']),
+                onTap: () => item['path'] != null ? _goToPage(context, item['path']) : item['navigate'](context),
                 trailing: Icon(Icons.chevron_right),
                 leading: Icon(item['icon']),
               );

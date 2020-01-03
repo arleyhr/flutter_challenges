@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shared_app/application.dart';
-import 'package:travel_app/routes.dart';
 import 'package:travel_app/utils/colors.dart';
 
 import 'package:travel_app/utils/images.dart';
