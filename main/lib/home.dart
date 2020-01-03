@@ -6,6 +6,9 @@ import 'package:restaurant_details_review/routes.dart';
 import 'package:app_for_collectors/routes.dart';
 import 'package:android_whatsapp/routes.dart';
 import 'package:travel_app/routes.dart';
+import 'package:ticket_reservation_interaction/modal.dart';
+
+final ticketReservationModal = new TicketModal();
 
 
 List apps = [
@@ -39,7 +42,7 @@ List apps = [
     "path": null,
     "icon": Icons.movie,
     "navigate": (context) {
-
+      ticketReservationModal.showModal(context);
     }
   },
 ];
