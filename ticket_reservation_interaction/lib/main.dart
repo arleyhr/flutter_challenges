@@ -128,117 +128,146 @@ class _TicketReservationInteractionState extends State<TicketReservationInteract
         color: Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(10))
       ),
-       child: Column(
-         children: <Widget>[
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                Expanded(
-                  flex: 1,
-                  child: IconButton(icon: Icon(Icons.close, color: Colors.grey, size: 26), onPressed: Navigator.of(context).pop),
-                ),
-                Expanded(
-                  flex: 5,
-                  child: Container(
-                    alignment: Alignment.center,
-                    child: Text("How many seats?", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
-                  ),
-                ),
-                Expanded(flex: 1, child: SizedBox()),
-              ],
-            ),
-            Container(
-              height: 160,
-              width: 250,
-              margin: EdgeInsets.only(top: 30, bottom: 20),
-              child: Stack(
+       child: SafeArea(
+         child: Column(
+           children: <Widget>[
+              Row(
+                mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
-                  Positioned(
-                    left: 25,
-                    bottom: 10,
-                    child: AnimatedContainer(
-                      duration: Duration(milliseconds: 500),
-                      curve: Curves.easeInCubic,
-                      margin: EdgeInsets.only(top: _leftPopcornMargin),
-                      height: _leftPopcornScale,
-                      child: AnimatedOpacity(
-                        duration: Duration(milliseconds: 500),
-                        opacity: _leftPopcornScale > 1 ? 1 : 0,
-                        child: Image.network(popcorn, fit: BoxFit.cover)
-                      )
-                    )
+                  Expanded(
+                    flex: 1,
+                    child: IconButton(icon: Icon(Icons.close, color: Colors.grey, size: 26), onPressed: Navigator.of(context).pop),
                   ),
-                  Positioned(
-                    right: 25,
-                    bottom: 10,
-                    child: AnimatedContainer(
-                      duration: Duration(milliseconds: 500),
-                      curve: Curves.easeInCubic,
-                      margin: EdgeInsets.only(top: _rightPopcornMargin),
-                      height: _rightPopcornScale,
-                      child: AnimatedOpacity(
-                        duration: Duration(milliseconds: 500),
-                        opacity: _rightPopcornScale > 1 ? 1 : 0,
-                        child: Image.network(popcorn, fit: BoxFit.cover)
-                      )
-                    )
-                  ),
-                  Align(
-                    alignment: Alignment.center,
-                    child: AnimatedContainer(
-                      duration: Duration(milliseconds: 500),
-                      curve: Curves.easeInCubic,
-                      height: _middlePopcornScale,
-                      margin: EdgeInsets.only(top: _middlePopcornMargin),
-                      child: Image.network(popcorn, fit: BoxFit.cover),
+                  Expanded(
+                    flex: 5,
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: Text("How many seats?", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
                     ),
                   ),
-                ]
+                  Expanded(flex: 1, child: SizedBox()),
+                ],
               ),
-            ),
-            FractionallySizedBox(
-              widthFactor: 0.8,
-              child: Container(
-                height: 60,
+              Container(
+                height: 160,
+                width: 250,
+                margin: EdgeInsets.only(top: 10, bottom: 20),
                 child: Stack(
-                  fit: StackFit.expand,
                   children: <Widget>[
-                    AnimatedPositioned(
-                      duration: Duration(milliseconds: 500),
-                      curve: Curves.easeIn,
-                      top: 10,
-                      left: _selectionPosition,
-                      child: Container(
-                        decoration:  BoxDecoration(
-                          color: redColor,
-                          borderRadius: BorderRadius.circular(5)
-                        ),
-                        height: 40,
-                        width: _selectionPositionWidth,
-                        child: null,
+                    Positioned(
+                      left: 25,
+                      bottom: 10,
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.easeInCubic,
+                        margin: EdgeInsets.only(top: _leftPopcornMargin),
+                        height: _leftPopcornScale,
+                        child: AnimatedOpacity(
+                          duration: Duration(milliseconds: 500),
+                          opacity: _leftPopcornScale > 1 ? 1 : 0,
+                          child: Image.network(popcorn, fit: BoxFit.cover)
+                        )
+                      )
+                    ),
+                    Positioned(
+                      right: 25,
+                      bottom: 10,
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.easeInCubic,
+                        margin: EdgeInsets.only(top: _rightPopcornMargin),
+                        height: _rightPopcornScale,
+                        child: AnimatedOpacity(
+                          duration: Duration(milliseconds: 500),
+                          opacity: _rightPopcornScale > 1 ? 1 : 0,
+                          child: Image.network(popcorn, fit: BoxFit.cover)
+                        )
+                      )
+                    ),
+                    Align(
+                      alignment: Alignment.center,
+                      child: AnimatedContainer(
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.easeInCubic,
+                        height: _middlePopcornScale,
+                        margin: EdgeInsets.only(top: _middlePopcornMargin),
+                        child: Image.network(popcorn, fit: BoxFit.cover),
                       ),
                     ),
-                    Row(
-                      children: List<Widget>.generate(_numberOfButtons, (i) {
-                        final lastIndex  = _numberOfButtons - 1;
-                        return Container(
-                          margin: EdgeInsets.only(right: i != lastIndex ? _selectionPositionMargin : 0),
-                          width: _selectionPositionWidth,
-                          height: 40,
-                          child: RawMaterialButton(
-                            onPressed: () {
-                              _handleAnimation(i);
-                            },
-                            child:Text((i + 1).toString(), style: TextStyle(fontSize: 18, color: _selectedNumber == i ? Colors.white : Colors.black54), textAlign: TextAlign.center),
-                          ),
-                        );
-                      })
-                    ),
-                  ],
+                  ]
                 ),
               ),
-            )
-         ],
+              FractionallySizedBox(
+                widthFactor: 0.8,
+                child: Container(
+                  height: 60,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: <Widget>[
+                      AnimatedPositioned(
+                        duration: Duration(milliseconds: 500),
+                        curve: Curves.easeIn,
+                        top: 10,
+                        left: _selectionPosition,
+                        child: Container(
+                          decoration:  BoxDecoration(
+                            color: redColor,
+                            borderRadius: BorderRadius.circular(5)
+                          ),
+                          height: 40,
+                          width: _selectionPositionWidth,
+                          child: null,
+                        ),
+                      ),
+                      Row(
+                        children: List<Widget>.generate(_numberOfButtons, (i) {
+                          final lastIndex  = _numberOfButtons - 1;
+                          return Container(
+                            margin: EdgeInsets.only(right: i != lastIndex ? _selectionPositionMargin : 0),
+                            width: _selectionPositionWidth,
+                            height: 40,
+                            child: RawMaterialButton(
+                              onPressed: () {
+                                _handleAnimation(i);
+                              },
+                              child:Text((i + 1).toString(), style: TextStyle(fontSize: 18, color: _selectedNumber == i ? Colors.white : Colors.black54), textAlign: TextAlign.center),
+                            ),
+                          );
+                        })
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              FractionallySizedBox(
+                widthFactor: 0.8,
+                child: Container(
+                  height: 1,
+                  color: Colors.black26,
+                  margin: EdgeInsets.only(top: 10, bottom: 15),
+                ),
+              ),
+              Column(
+                children: <Widget>[
+                  Text("King circle", style: TextStyle(fontSize: 12)),
+                  Text("\$10.00", style: TextStyle(fontSize: 12)),
+                ],
+              ),
+              SizedBox(height: 15),
+              ButtonTheme(
+                minWidth: MediaQuery.of(context).size.width * 0.65,
+                height: 42,
+                child: RaisedButton(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                  onPressed: () {},
+                  color: redColor,
+                  child: Text("Book Seats", style: TextStyle(color: Colors.white, fontSize: 16)),
+                ),
+              )
+           ],
+         ),
        )
     );
   }
