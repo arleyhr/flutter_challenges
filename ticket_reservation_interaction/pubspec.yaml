@@ -1,5 +1,5 @@
-name: flutter_challenges
-description: A new Flutter project.
+name: ticket_reservation_interaction
+description: A new flutter module project.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -11,70 +11,37 @@ description: A new Flutter project.
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+32
+#
+# This version is used _only_ for the Runner app, which is used if you just do
+# a `flutter run` or a `flutter make-host-app-editable`. It has no impact
+# on any other native host app that you embed your Flutter project into.
+version: 1.0.0+1
 
 environment:
-  sdk: ">=2.4.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  dotted_border: 1.0.4
-  flutter_swiper:
-  fluro:
-  flare_flutter:
-  smart_flare:
-  transparent_image:
-  camera:
-  google_fonts:
-
-  shared_app:
-    path: "../shared_app"
-
-  app_for_collectors:
-    path: "../app_for_collectors"
-
-  restaurant_details_review:
-    path: "../restaurant_details_review"
-
-  multi_option_flare:
-    path: "../multi_option_flare"
-
-  android_whatsapp:
-    path: "../android_whatsapp"
-
-  travel_app:
-    path: "../travel_app"
-  ticket_reservation_interaction:
-    path: "../ticket_reservation_interaction"
-
 dev_dependencies:
-  flutter_launcher_icons: "^0.7.2"
   flutter_test:
     sdk: flutter
 
-flutter_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: "assets/icon/icon.png"
-
-
 # For information on the generic Dart part of this file, see the
-# following page: https://www.dartlang.org/tools/pub/pubspec
+# following page: https://dart.dev/tools/pub/pubspec
 
-# The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-  assets:
-   - assets/MultiOptionButton.flr
 
-  # To add assets to your application, add an assets section, like this:
+  # To add Flutter specific assets to your application, add an assets section, 
+  # like this:
   # assets:
+  #  - images/a_dot_burr.jpeg
+  #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -82,9 +49,9 @@ flutter:
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
 
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
+  # To add Flutter specific custom fonts to your application, add a fonts
+  # section here, in this "flutter" section. Each entry in this list should
+  # have a "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
@@ -101,3 +68,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+
+  # This section identifies your Flutter project as a module meant for
+  # embedding in a native host app.  These identifiers should _not_ ordinarily
+  # be changed after generation - they are used to ensure that the tooling can
+  # maintain consistency when adding or modifying assets and plugins.
+  # They also do not have any bearing on your native host application's
+  # identifiers, which may be completely independent or the same as these.
+  module:
+    androidX: true
+    androidPackage: com.arleyhr.flutter_challenges.ticket_reservation_interaction
+    iosBundleIdentifier: com.arleyhr.flutterchallenges.ticketReservationInteraction

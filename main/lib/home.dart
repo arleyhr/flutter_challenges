@@ -6,6 +6,9 @@ import 'package:restaurant_details_review/routes.dart';
 import 'package:app_for_collectors/routes.dart';
 import 'package:android_whatsapp/routes.dart';
 import 'package:travel_app/routes.dart';
+import 'package:ticket_reservation_interaction/modal.dart';
+
+final ticketReservationModal = new TicketModal();
 
 
 List apps = [
@@ -33,6 +36,14 @@ List apps = [
     "name": "Tourism App Concept",
     "path": TravelAppRoutes.homePath,
     "icon": Icons.local_airport
+  },
+  {
+    "name": "Ticket Reservation Interaction",
+    "path": null,
+    "icon": Icons.movie,
+    "navigate": (context) {
+      ticketReservationModal.showModal(context);
+    }
   },
 ];
 
@@ -64,7 +75,7 @@ class MyHomePage extends StatelessWidget {
 
               return ListTile(
                 title: Text(item['name']),
-                onTap: () => _goToPage(context, item['path']),
+                onTap: () => item['path'] != null ? _goToPage(context, item['path']) : item['navigate'](context),
                 trailing: Icon(Icons.chevron_right),
                 leading: Icon(item['icon']),
               );

@@ -36,6 +36,8 @@ dependencies:
     path: "../android_whatsapp"
   travel_app:
     path: "../travel_app"
+  ticket_reservation_interaction:
+    path: "../ticket_reservation_interaction"
 
 dev_dependencies:
   flutter_test:
