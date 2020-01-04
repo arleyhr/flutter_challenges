@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-const imagesPath = "https://res.cloudinary.com/arleyhr/image/upload/v1578065175/flutter/ticket-reservation-interaction";
-const popcorn = "$imagesPath/popcorn_rv3spp.png";
-const corn = "$imagesPath/corn_oyow5w.png";
+const popcorn = "https://res.cloudinary.com/arleyhr/image/upload/v1578169554/flutter/ticket-reservation-interaction/popcorn_iqpsty.png";
+const corn = "https://res.cloudinary.com/arleyhr/image/upload/v1578065175/flutter/ticket-reservation-interaction/corn_oyow5w.png";
 const redColor = Color(0xFFF74200);
 
 class TicketReservationInteraction extends StatefulWidget {
@@ -12,20 +11,112 @@ class TicketReservationInteraction extends StatefulWidget {
   _TicketReservationInteractionState createState() => _TicketReservationInteractionState();
 }
 
-class _TicketReservationInteractionState extends State<TicketReservationInteraction> with TickerProviderStateMixin {
-  double selectionPosition = 0.0;
-  double selectionPositionWidth = 25.0;
-  double selectionPositionMargin = 15.0;
+class _TicketReservationInteractionState extends State<TicketReservationInteraction> {
+  double _selectionPosition = 0.0;
+  double _selectionPositionWidth = 35;
+  double _selectionPositionMargin = 15;
+  int _numberOfButtons = 6;
+  int _selectedNumber = 0;
 
-  @override
-  void initState() {
-    super.initState();
+  double _middlePopcornScale = 150;
+  double _middlePopcornMargin = 40;
 
+  double _leftPopcornScale = 0;
+  double _leftPopcornMargin = 0;
+
+  double _rightPopcornScale = 0;
+  double _rightPopcornMargin = 0;
+
+  _resetRightSide() {
+    setState(() {
+      _rightPopcornScale = 0;
+      _rightPopcornMargin = 0;
+    });
   }
 
-  @override
-  void dispose() {
-    super.dispose();
+  _resetLeftSide() {
+    setState(() {
+      _leftPopcornScale = 0;
+      _leftPopcornMargin = 0;
+    });
+  }
+
+  _resetSides() {
+    _resetRightSide();
+    _resetLeftSide();
+  }
+
+  _setFullMiddle() {
+    setState(() {
+      _middlePopcornScale = 180;
+      _middlePopcornMargin = 0;
+    });
+  }
+
+  _setFullLeftSide() {
+    _setFullMiddle();
+    setState(() {
+      _leftPopcornScale = 130;
+      _leftPopcornMargin = 0;
+    });
+  }
+
+  _setFillRightSide() {
+    _setFullLeftSide();
+    setState(() {
+      _rightPopcornScale = 130;
+      _rightPopcornMargin = 0;
+    });
+  }
+
+  void _handleAnimation(itemNumber) {
+    final newPosition = (itemNumber * _selectionPositionWidth) + (itemNumber * _selectionPositionMargin);
+    setState(() {
+      _selectionPosition = newPosition;
+    });
+
+    Future.delayed(Duration(milliseconds: 500), () {
+      setState(() {
+        _selectedNumber = itemNumber;
+      });
+    });
+
+    switch (itemNumber) {
+      case 0:
+        _resetSides();
+        setState(() {
+          _middlePopcornScale = 150;
+          _middlePopcornMargin = 40;
+        });
+        break;
+      case 1:
+        _resetSides();
+        _setFullMiddle();
+        break;
+      case 2:
+        _setFullMiddle();
+        _resetRightSide();
+        setState(() {
+          _leftPopcornScale = 100;
+          _leftPopcornMargin = 40;
+        });
+        break;
+      case 3:
+        _setFullLeftSide();
+        _resetRightSide();
+        break;
+      case 4:
+        _setFullLeftSide();
+        setState(() {
+          _rightPopcornScale = 100;
+          _rightPopcornMargin = 40;
+        });
+        break;
+      case 5:
+        _setFillRightSide();
+        break;
+      default:
+    }
   }
 
   @override
@@ -57,88 +148,91 @@ class _TicketReservationInteractionState extends State<TicketReservationInteract
               ],
             ),
             Container(
-              height: 120,
-              width: 200,
-              margin: EdgeInsets.only(top: 30),
+              height: 160,
+              width: 250,
+              margin: EdgeInsets.only(top: 30, bottom: 20),
               child: Stack(
                 children: <Widget>[
                   Positioned(
-                    left: 20,
-                    bottom: 15,
+                    left: 25,
+                    bottom: 10,
                     child: AnimatedContainer(
                       duration: Duration(milliseconds: 500),
-                      curve: Curves.easeIn,
-                      height: 90,
-                      child: Image.network(popcorn)
+                      curve: Curves.easeInCubic,
+                      margin: EdgeInsets.only(top: _leftPopcornMargin),
+                      height: _leftPopcornScale,
+                      child: AnimatedOpacity(
+                        duration: Duration(milliseconds: 500),
+                        opacity: _leftPopcornScale > 1 ? 1 : 0,
+                        child: Image.network(popcorn, fit: BoxFit.cover)
+                      )
                     )
                   ),
                   Positioned(
-                    right: 20,
-                    bottom: 15,
+                    right: 25,
+                    bottom: 10,
                     child: AnimatedContainer(
                       duration: Duration(milliseconds: 500),
-                      curve: Curves.easeIn,
-                      height: 90,
-                      child: Image.network(popcorn)
+                      curve: Curves.easeInCubic,
+                      margin: EdgeInsets.only(top: _rightPopcornMargin),
+                      height: _rightPopcornScale,
+                      child: AnimatedOpacity(
+                        duration: Duration(milliseconds: 500),
+                        opacity: _rightPopcornScale > 1 ? 1 : 0,
+                        child: Image.network(popcorn, fit: BoxFit.cover)
+                      )
                     )
                   ),
                   Align(
                     alignment: Alignment.center,
                     child: AnimatedContainer(
                       duration: Duration(milliseconds: 500),
-                      curve: Curves.easeIn,
-                      height: 150,
-                      child: Image.network(popcorn),
+                      curve: Curves.easeInCubic,
+                      height: _middlePopcornScale,
+                      margin: EdgeInsets.only(top: _middlePopcornMargin),
+                      child: Image.network(popcorn, fit: BoxFit.cover),
                     ),
                   ),
                 ]
               ),
             ),
             FractionallySizedBox(
-              widthFactor: 0.6,
+              widthFactor: 0.8,
               child: Container(
-                height: 40,
+                height: 60,
                 child: Stack(
                   fit: StackFit.expand,
                   children: <Widget>[
                     AnimatedPositioned(
                       duration: Duration(milliseconds: 500),
                       curve: Curves.easeIn,
-                      top: 5,
-                      left: selectionPosition,
+                      top: 10,
+                      left: _selectionPosition,
                       child: Container(
                         decoration:  BoxDecoration(
                           color: redColor,
                           borderRadius: BorderRadius.circular(5)
                         ),
-                        height: 30,
-                        width: 25,
+                        height: 40,
+                        width: _selectionPositionWidth,
                         child: null,
                       ),
                     ),
-                    Container(
-                      child: Row(
-                        children: List<Widget>.generate(6, (i) {
-                          final lastIndex  = 5;
-                          return Container(
-                            margin: EdgeInsets.only(right: i != lastIndex ? selectionPositionMargin : 0),
-                            child: GestureDetector(
-                              onTapDown: (TapDownDetails details) {
-                                final newPosition = (i * selectionPositionWidth) + (i * selectionPositionMargin);
-                                setState(() {
-                                  selectionPosition = newPosition;
-                                });
-                              },
-                              child: Container(
-                                width: 25,
-                                height: 30,
-                                alignment: Alignment.center,
-                                child: Text((i + 1).toString(), style: TextStyle(fontSize: 18, color: Colors.black54), textAlign: TextAlign.center),
-                              ),
-                            ),
-                          );
-                        })
-                      ),
+                    Row(
+                      children: List<Widget>.generate(_numberOfButtons, (i) {
+                        final lastIndex  = _numberOfButtons - 1;
+                        return Container(
+                          margin: EdgeInsets.only(right: i != lastIndex ? _selectionPositionMargin : 0),
+                          width: _selectionPositionWidth,
+                          height: 40,
+                          child: RawMaterialButton(
+                            onPressed: () {
+                              _handleAnimation(i);
+                            },
+                            child:Text((i + 1).toString(), style: TextStyle(fontSize: 18, color: _selectedNumber == i ? Colors.white : Colors.black54), textAlign: TextAlign.center),
+                          ),
+                        );
+                      })
                     ),
                   ],
                 ),
