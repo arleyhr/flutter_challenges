@@ -1,8 +1,8 @@
-# ticket_reservation_interaction
+# 💥Ticket Reservation Interaction
 
-A new flutter module project.
 
-## Getting Started
 
-For help getting started with Flutter, view our online
-[documentation](https://flutter.dev/).
+
+<img src='https://res.cloudinary.com/arleyhr/image/upload/v1578171533/flutter/ticket-reservation-interaction/demo_l9p4hh.gif' />
+
+### 🌌 Inspiration: [https://www.uplabs.com/posts/ticket-reservation-micro-interaction](https://www.uplabs.com/posts/ticket-reservation-micro-interaction)
