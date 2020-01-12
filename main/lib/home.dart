@@ -7,6 +7,7 @@ import 'package:app_for_collectors/routes.dart';
 import 'package:android_whatsapp/routes.dart';
 import 'package:travel_app/routes.dart';
 import 'package:ticket_reservation_interaction/modal.dart';
+import 'package:e3_redesign/routes.dart';
 
 final ticketReservationModal = new TicketModal();
 
@@ -44,6 +45,11 @@ List apps = [
     "navigate": (context) {
       ticketReservationModal.showModal(context);
     }
+  },
+  {
+    "name": "E3 Redesign",
+    "path": E3RedesignRoutes.homePath,
+    "icon": Icons.gamepad
   },
 ];
 

@@ -85,6 +85,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  e3_redesign:
+    dependency: "direct main"
+    description:
+      path: "../e3_redesign"
+      relative: true
+    source: path
+    version: "1.0.0+1"
   flare_dart:
     dependency: transitive
     description:

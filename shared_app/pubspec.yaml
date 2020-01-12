@@ -38,6 +38,8 @@ dependencies:
     path: "../travel_app"
   ticket_reservation_interaction:
     path: "../ticket_reservation_interaction"
+  e3_redesign:
+    path: "../e3_redesign"
 
 dev_dependencies:
   flutter_test:
