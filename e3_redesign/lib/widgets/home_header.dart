@@ -15,7 +15,7 @@ class HomeHeader extends StatelessWidget {
             color: Colors.black,
             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50))
           ),
-          height: 250
+          height: 225
         ),
         Container(
           padding: EdgeInsets.symmetric(horizontal: 43),
@@ -23,7 +23,7 @@ class HomeHeader extends StatelessWidget {
             color: Colors.red,
             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(60))
           ),
-          height: 190,
+          height: 170,
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,7 +66,7 @@ class HomeHeader extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 25),
+              SizedBox(height: 15),
               Text("Conference 2019", style: TextStyle(color: Colors.white, fontSize: 27, fontWeight: FontWeight.bold)),
             ],
           ),

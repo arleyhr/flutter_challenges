@@ -7,5 +7,6 @@ const e3RedesignImages = {
   "grid_icon": "$baseUrl/v1578696797/flutter/icons/grid-icon_aswx7u.png",
   "dots_menu": "$baseUrl/v1578696797/flutter/icons/dots-menu_ryrvic.png",
   "loupe": "$baseUrl/v1578696797/flutter/icons/loupe_oo80pz.png",
-  "gears": "$baseUrl/v1578696761/flutter/e3_app/gears5_wuidfe.jpg"
+  "gears": "$baseUrl/v1578696761/flutter/e3_app/gears5_wuidfe.jpg",
+  "cyberpunk": "$baseUrl/v1578696760/flutter/e3_app/cyberpunk-2077_zjzkng.jpg",
 };

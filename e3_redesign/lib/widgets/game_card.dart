@@ -7,6 +7,7 @@ class GameCard extends StatelessWidget {
     @required this.name,
     @required this.description,
     @required this.likes,
+    @required this.titleWidth,
     this.platforms,
     this.exclusiveLogo,
   }) : super(key: key);
@@ -15,13 +16,14 @@ class GameCard extends StatelessWidget {
   final String name;
   final String description;
   final num likes;
+  final double titleWidth;
   final String platforms;
   final Image exclusiveLogo;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 245,
+      height: 240,
       child: Stack(
         children: <Widget>[
           Card(
@@ -29,6 +31,8 @@ class GameCard extends StatelessWidget {
             name: name,
             description: description,
             platforms: platforms,
+            exclusiveLogo: exclusiveLogo,
+            titleWidth: titleWidth,
           ),
           Positioned(
             right: 20,
@@ -91,6 +95,7 @@ class Card extends StatelessWidget {
     @required this.image,
     @required this.name,
     @required this.description,
+    @required this.titleWidth,
     this.platforms,
     this.exclusiveLogo,
   }) : super(key: key);
@@ -98,6 +103,7 @@ class Card extends StatelessWidget {
   final Image image;
   final String name;
   final String description;
+  final double titleWidth;
   final String platforms;
   final Image exclusiveLogo;
 
@@ -134,7 +140,10 @@ class Card extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
                     ClipPath(
-                      clipper: CardCustomClipper(),
+                      clipper: CardCustomClipper(
+                        withLogo: exclusiveLogo != null,
+                        titleWidth: titleWidth
+                      ),
                       child: Container(
                         alignment: Alignment.centerLeft,
                         padding: EdgeInsets.symmetric(horizontal: 20),
@@ -154,13 +163,34 @@ class Card extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Text(description, style: TextStyle(fontSize: 12, letterSpacing: -1)),
-                          Text(platforms, style: TextStyle(fontSize: 10, letterSpacing: -1)),
+                          exclusiveLogo == null ? Text(platforms, style: TextStyle(fontSize: 10, letterSpacing: -1)) : SizedBox(),
                         ],
                       )
                     )
                   ],
                 ),
               ),
+              exclusiveLogo != null ? Positioned(
+                right: 10,
+                bottom: 15,
+                child: ClipPath(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 5),
+                    width: 65,
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(height: 12),
+                        Container(
+                          width: 22,
+                          child: exclusiveLogo,
+                        ),
+                        SizedBox(height: 8),
+                        Text("EXCLUSIVE", style: TextStyle(fontSize: 8, fontWeight: FontWeight.bold))
+                      ],
+                    ),
+                  ),
+                ),
+              ) : SizedBox()
             ],
           ),
         ),
@@ -171,6 +201,11 @@ class Card extends StatelessWidget {
 
 
 class CardCustomClipper extends CustomClipper<Path> {
+  CardCustomClipper({ this.withLogo, this.titleWidth });
+  final bool withLogo;
+  final double titleWidth;
+
+
   @override
   Path getClip(Size size) {
     final width = size.width;
@@ -181,16 +216,24 @@ class CardCustomClipper extends CustomClipper<Path> {
     path.moveTo(0, height);
     path.lineTo(0, 0);
 
-    path.lineTo(width * 0.27, 0);
+    path.lineTo(width * 0.27 + titleWidth, 0);
 
 
-    path.quadraticBezierTo(width * 0.35, 0, width * 0.37, height * 0.4);
-    path.quadraticBezierTo(width * 0.4, height, width * 0.5, height);
+    path.quadraticBezierTo(width * 0.35 + titleWidth, 0, width * 0.37 + titleWidth, height * 0.4);
+    path.quadraticBezierTo(width * 0.4 + titleWidth, height, width * 0.5 + titleWidth, height);
 
-    path.lineTo(width * 0.85, height);
+
+    if (withLogo) {
+      path.lineTo(width * 0.7, height);
+      path.quadraticBezierTo(width * 0.75, height * 0.95, width * 0.8, height * 0.4);
+      path.quadraticBezierTo(width * 0.83, 0, width * 0.86, 0);
+      path.quadraticBezierTo(width * 0.91, 0, width * 0.93, height * 0.4);
+      path.quadraticBezierTo(width * 0.94, height * 0.9, width * 0.92, height * 0.8);
+    } else {
+      path.lineTo(width * 0.85, height);
+    }
 
     path.quadraticBezierTo(width * 0.98, height * 0.9, width, 0);
-    path.lineTo(width, 0);
     path.lineTo(width, height);
     path.close();
 
