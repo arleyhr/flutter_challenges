@@ -17,9 +17,9 @@ class E3RedesignHome extends StatelessWidget {
         ),
         backgroundColor: Color(0xFFf8f8f8),
         body: ListView(
-          padding: EdgeInsets.only(left: 30, right: 20),
+          padding: EdgeInsets.only(left: 30, right: 10),
           children: <Widget>[
-            SizedBox(height: 15),
+            SizedBox(height: 30),
             GameCard(
               image: Image.network(e3RedesignImages["gears"]),
               name: "GEARS 5",
@@ -29,7 +29,7 @@ class E3RedesignHome extends StatelessWidget {
               exclusiveLogo: Image.network(e3RedesignImages["xbox"]),
               titleWidth: 0,
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 30),
             GameCard(
               image: Image.network(e3RedesignImages["cyberpunk"]),
               name: "CYBERPUNK 2277",
@@ -38,7 +38,7 @@ class E3RedesignHome extends StatelessWidget {
               likes: 69,
               titleWidth: 84,
             ),
-            SizedBox(height: 15),
+            SizedBox(height: 30),
             Row(
               children: <Widget>[
                 Container(

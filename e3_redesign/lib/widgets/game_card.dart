@@ -23,7 +23,7 @@ class GameCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 240,
+      height: 250,
       child: Stack(
         children: <Widget>[
           Card(
@@ -89,7 +89,7 @@ class GameCard extends StatelessWidget {
   }
 }
 
-class Card extends StatelessWidget {
+class Card extends StatefulWidget {
   const Card({
     Key key,
     @required this.image,
@@ -108,90 +108,118 @@ class Card extends StatelessWidget {
   final Image exclusiveLogo;
 
   @override
+  _CardState createState() => _CardState();
+}
+
+class _CardState extends State<Card> {
+  bool isPressed = false;
+
+  setPressed(bool status) {
+    setState(() {
+      isPressed = status;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return FractionallySizedBox(
       widthFactor: 0.95,
       heightFactor: 1,
-      child: Container(
-        margin: EdgeInsetsDirectional.only(top: 15),
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              blurRadius: 30,
-              offset: Offset(0, 35),
-              color: Colors.grey.withOpacity(.30),
-              spreadRadius: -20
-            )
-          ]
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(50),
-            bottomRight: Radius.circular(25)
+      child: GestureDetector(
+        onTap: () {
+          setPressed(false);
+        },
+        onTapDown: (_) {
+          setPressed(true);
+        },
+        onTapUp: (_) {
+          setPressed(false);
+        },
+        onTapCancel: () {
+          setPressed(false);
+        },
+        child: AnimatedContainer(
+          duration: Duration(milliseconds: 200),
+          margin: EdgeInsetsDirectional.only(top: 15),
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 30,
+                offset: Offset(0, isPressed ? 0 : 35),
+                color: Colors.grey.withOpacity(.30),
+                spreadRadius: -20
+              )
+            ]
           ),
-          child: Stack(
-            children: <Widget>[
-              image,
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    ClipPath(
-                      clipper: CardCustomClipper(
-                        withLogo: exclusiveLogo != null,
-                        titleWidth: titleWidth
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(50),
+              bottomRight: Radius.circular(25)
+            ),
+            child: Stack(
+              children: <Widget>[
+                widget.image,
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      ClipPath(
+                        clipper: CardCustomClipper(
+                          withLogo: widget.exclusiveLogo != null,
+                          titleWidth: widget.titleWidth
+                        ),
+                        child: Container(
+                          alignment: Alignment.centerLeft,
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          height: 30,
+                          width: double.infinity,
+                          color: Colors.white,
+                          child: Text(widget.name, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                        ),
                       ),
-                      child: Container(
+                      Container(
                         alignment: Alignment.centerLeft,
                         padding: EdgeInsets.symmetric(horizontal: 20),
-                        height: 30,
+                        height: 35,
                         width: double.infinity,
                         color: Colors.white,
-                        child: Text(name, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                      ),
-                    ),
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      height: 35,
-                      width: double.infinity,
-                      color: Colors.white,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Text(description, style: TextStyle(fontSize: 12, letterSpacing: -1)),
-                          exclusiveLogo == null ? Text(platforms, style: TextStyle(fontSize: 10, letterSpacing: -1)) : SizedBox(),
-                        ],
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text(widget.description, style: TextStyle(fontSize: 12, letterSpacing: -1)),
+                            widget.exclusiveLogo == null ? Text(widget.platforms, style: TextStyle(fontSize: 10, letterSpacing: -1)) : SizedBox(),
+                          ],
+                        )
                       )
-                    )
-                  ],
-                ),
-              ),
-              exclusiveLogo != null ? Positioned(
-                right: 10,
-                bottom: 15,
-                child: ClipPath(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 5),
-                    width: 65,
-                    child: Column(
-                      children: <Widget>[
-                        SizedBox(height: 12),
-                        Container(
-                          width: 22,
-                          child: exclusiveLogo,
-                        ),
-                        SizedBox(height: 8),
-                        Text("EXCLUSIVE", style: TextStyle(fontSize: 8, fontWeight: FontWeight.bold))
-                      ],
-                    ),
+                    ],
                   ),
                 ),
-              ) : SizedBox()
-            ],
+                widget.exclusiveLogo != null ? Positioned(
+                  right: 15,
+                  bottom: 15,
+                  child: ClipPath(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 5),
+                      width: 65,
+                      child: Column(
+                        children: <Widget>[
+                          SizedBox(height: 12),
+                          Container(
+                            width: 22,
+                            child: widget.exclusiveLogo,
+                          ),
+                          SizedBox(height: 8),
+                          Text("EXCLUSIVE", style: TextStyle(fontSize: 8, fontWeight: FontWeight.bold))
+                        ],
+                      ),
+                    ),
+                  ),
+                ) : SizedBox()
+              ],
+            ),
           ),
         ),
       ),
@@ -228,7 +256,7 @@ class CardCustomClipper extends CustomClipper<Path> {
       path.quadraticBezierTo(width * 0.75, height * 0.95, width * 0.8, height * 0.4);
       path.quadraticBezierTo(width * 0.83, 0, width * 0.86, 0);
       path.quadraticBezierTo(width * 0.91, 0, width * 0.93, height * 0.4);
-      path.quadraticBezierTo(width * 0.94, height * 0.9, width * 0.92, height * 0.8);
+      path.quadraticBezierTo(width * 0.95, height * 0.94, width * 0.92, height * 0.8);
     } else {
       path.lineTo(width * 0.85, height);
     }
