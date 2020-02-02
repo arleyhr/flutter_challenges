@@ -47,19 +47,19 @@ class HomeHeader extends StatelessWidget {
                     children: <Widget>[
                       Container(
                         margin: EdgeInsets.only(bottom: 5),
-                        width: 25,
+                        width: 20,
                         child: RawMaterialButton(
                           onPressed: () {},
-                          child: Image.network(e3RedesignImages["loupe"], width: 22),
+                          child: Image.network(e3RedesignImages["loupe"], width: 20),
                         ),
                       ),
                       SizedBox(width: 20),
                       Container(
                         margin: EdgeInsets.only(bottom: 5),
-                        width: 25,
+                        width: 20,
                         child: RawMaterialButton(
                           onPressed: () {},
-                          child: Image.network(e3RedesignImages["dots_menu"], width: 22),
+                          child: Image.network(e3RedesignImages["dots_menu"], width: 20),
                         ),
                       ),
                     ],
@@ -83,9 +83,9 @@ class HomeHeader extends StatelessWidget {
                 icon: Icon(Icons.arrow_left, color: Colors.white54, size: 30),
                 onPressed: () {},
               ),
-              Text("Microsoft", style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.w800, letterSpacing: 1.5)),
-              Text("Nintendo", style: TextStyle(color: Colors.white54, fontSize: 12, letterSpacing: 1.5)),
-              Text("Bethesda", style: TextStyle(color: Colors.white54, fontSize: 12, letterSpacing: 1.5)),
+              Text("Microsoft", style: TextStyle(color: Colors.white, fontSize: 13, fontWeight: FontWeight.w800)),
+              Text("Nintendo", style: TextStyle(color: Colors.white54, fontSize: 13)),
+              Text("Bethesda", style: TextStyle(color: Colors.white54, fontSize: 13)),
               IconButton(
                 icon: Icon(Icons.arrow_right, color: Colors.white, size: 30),
                 onPressed: () {},
