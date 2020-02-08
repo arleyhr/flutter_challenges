@@ -29,6 +29,11 @@
 |<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577809900/flutter/travel-app/demo_bpzzdm.gif' width='360' />|<img src="https://res.cloudinary.com/arleyhr/image/upload/v1578171533/flutter/ticket-reservation-interaction/demo_l9p4hh.gif" width='360'>
 [🌌 Inspiration](https://www.uplabs.com/posts/tourism-app-concept)|[🌌 Inspiration](https://www.uplabs.com/posts/ticket-reservation-micro-interaction)|
 
+|[⚡️E3 App Redesign](e3_redesign)||
+|--|--|
+|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1581188506/flutter/e3_app/demo_qtrqbl.gif' width='360' />|
+[🌌 Inspiration](https://dribbble.com/shots/6607470-App-E3-Redesign)||
+
 
 ## ⚡️Getting Started
 
