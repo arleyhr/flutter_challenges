@@ -1,16 +1,18 @@
+import 'package:e3_redesign/routes.dart';
 import 'package:e3_redesign/theme_app.dart';
+import 'package:e3_redesign/utils/games.dart';
 import 'package:e3_redesign/utils/images.dart';
 import 'package:e3_redesign/widgets/game_card.dart';
 import 'package:e3_redesign/widgets/home_header.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_app/application.dart';
 
 class E3RedesignHome extends StatelessWidget {
   const E3RedesignHome({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ThemeE3Redesign(
-      child: Scaffold(
+    return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(400),
           child: HomeHeader(),
@@ -28,6 +30,9 @@ class E3RedesignHome extends StatelessWidget {
               likes: 69,
               exclusiveLogo: Image.network(e3RedesignImages["xbox"]),
               titleWidth: 0,
+              onPress: () {
+                Application.router.navigateTo(context, E3RedesignRoutes.getDetailPath(gameId: 'gears'));
+              }
             ),
             SizedBox(height: 30),
             GameCard(
@@ -37,6 +42,9 @@ class E3RedesignHome extends StatelessWidget {
               platforms: "PS4 / XBOX / PC",
               likes: 69,
               titleWidth: 84,
+              onPress: () {
+                Application.router.navigateTo(context, E3RedesignRoutes.getDetailPath(gameId: 'cyberpunk'));
+              },
             ),
             SizedBox(height: 30),
             Row(
@@ -50,7 +58,9 @@ class E3RedesignHome extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Application.router.pop(context);
+                    },
                     child: Icon(Icons.dashboard, color: Colors.redAccent),
                   )
                 ),
@@ -64,7 +74,9 @@ class E3RedesignHome extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Application.router.pop(context);
+                      },
                       child: Text("Live stream", style: TextStyle(fontWeight: FontWeight.bold),)
                     )
                   ),
@@ -78,15 +90,17 @@ class E3RedesignHome extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Application.router.pop(context);
+                    },
                     child: Image.network(e3RedesignImages["favorite_comment"], width: 18),
                   )
                 ),
               ]
-            )
+            ),
+            SizedBox(height: 30)
           ],
         )
-      ),
-    );
+      );
   }
 }

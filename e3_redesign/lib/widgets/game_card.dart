@@ -8,6 +8,7 @@ class GameCard extends StatelessWidget {
     @required this.description,
     @required this.likes,
     @required this.titleWidth,
+    @required this.onPress,
     this.platforms,
     this.exclusiveLogo,
   }) : super(key: key);
@@ -17,6 +18,7 @@ class GameCard extends StatelessWidget {
   final String description;
   final num likes;
   final double titleWidth;
+  final Function onPress;
   final String platforms;
   final Image exclusiveLogo;
 
@@ -33,6 +35,7 @@ class GameCard extends StatelessWidget {
             platforms: platforms,
             exclusiveLogo: exclusiveLogo,
             titleWidth: titleWidth,
+            onPress: onPress
           ),
           Positioned(
             right: 20,
@@ -96,6 +99,7 @@ class Card extends StatefulWidget {
     @required this.name,
     @required this.description,
     @required this.titleWidth,
+    @required this.onPress,
     this.platforms,
     this.exclusiveLogo,
   }) : super(key: key);
@@ -104,6 +108,7 @@ class Card extends StatefulWidget {
   final String name;
   final String description;
   final double titleWidth;
+  final Function onPress;
   final String platforms;
   final Image exclusiveLogo;
 
@@ -128,6 +133,7 @@ class _CardState extends State<Card> {
       child: GestureDetector(
         onTap: () {
           setPressed(false);
+          widget.onPress();
         },
         onTapDown: (_) {
           setPressed(true);
