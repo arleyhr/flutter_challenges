@@ -1,5 +1,5 @@
+import 'package:e3_redesign/utils/images.dart';
 import 'package:flutter/material.dart';
-import 'package:e3_redesign/theme_app.dart';
 import 'package:e3_redesign/utils/games.dart';
 import 'package:e3_redesign/widgets/detail_header.dart';
 
@@ -18,9 +18,84 @@ class E3RedesignDetail extends StatelessWidget {
       body: ListView(
         padding: EdgeInsets.only(top: 0),
         children: <Widget>[
-          DetailHeader(cover: NetworkImage(game.cover), platform: game.platform, name: game.name, release: game.release)
+          DetailHeader(cover: NetworkImage(game.cover), platform: game.platform, name: game.name, release: game.release),
+          SizedBox(height: 40),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 40),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text("Collector's Edition", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, letterSpacing: -0.8)),
+                    Dots(),
+                  ]
+                ),
+                SizedBox(height: 15),
+                ClipRRect(
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(30), bottomRight: Radius.circular(30)),
+                  child: Container(
+                    child: Image.network(e3RedesignImages['cyberpunk_collectors'])
+                  )
+                ),
+              ]
+            )
+          ),
+          SizedBox(height: 40),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 40),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Dots(),
+                    Text("Surprise Keanu Reeves E3 2019", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, letterSpacing: -0.8)),
+                  ]
+                ),
+                SizedBox(height: 15),
+                ClipRRect(
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(30), bottomRight: Radius.circular(30)),
+                  child: Container(
+                    child: Image.network(e3RedesignImages['keanu'])
+                  )
+                ),
+              ]
+            )
+          ),
         ],
       )
+    );
+  }
+}
+
+class Dots extends StatelessWidget {
+  const Dots({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.black87,
+            borderRadius: BorderRadius.circular(5)
+          ),
+          height: 5,
+          width: 5,
+        ),
+        SizedBox(width: 4),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.black87,
+            borderRadius: BorderRadius.circular(5)
+          ),
+          height: 5,
+          width: 5,
+        ),
+      ]
     );
   }
 }

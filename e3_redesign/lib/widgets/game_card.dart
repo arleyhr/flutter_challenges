@@ -40,25 +40,27 @@ class GameCard extends StatelessWidget {
           Positioned(
             right: 20,
             top: 0,
-            child: Row(children: <Widget>[
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.black87,
-                  borderRadius: BorderRadius.circular(5)
+            child: Row(
+              children: <Widget>[
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black87,
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+                  height: 5,
+                  width: 5,
                 ),
-                height: 5,
-                width: 5,
-              ),
-              SizedBox(width: 4),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.black87,
-                  borderRadius: BorderRadius.circular(5)
+                SizedBox(width: 4),
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.black87,
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+                  height: 5,
+                  width: 5,
                 ),
-                height: 5,
-                width: 5,
-              ),
-            ],),
+              ]
+            ),
           ),
           Positioned(
             top: 50,

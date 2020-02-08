@@ -1,6 +1,4 @@
 import 'package:e3_redesign/routes.dart';
-import 'package:e3_redesign/theme_app.dart';
-import 'package:e3_redesign/utils/games.dart';
 import 'package:e3_redesign/utils/images.dart';
 import 'package:e3_redesign/widgets/game_card.dart';
 import 'package:e3_redesign/widgets/home_header.dart';
