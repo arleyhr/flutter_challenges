@@ -390,7 +390,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.arleyhr.flutterChallenges;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Runner;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Profile;
@@ -522,7 +522,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.arleyhr.flutterChallenges;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Runner;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -546,7 +546,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.arleyhr.flutterChallenges;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Runner;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

@@ -7,6 +7,7 @@ import 'package:restaurant_details_review/routes.dart';
 import 'package:multi_option_flare/routes.dart';
 import 'package:android_whatsapp/routes.dart';
 import 'package:travel_app/routes.dart';
+import 'package:e3_redesign/routes.dart';
 
 const String rootView = '/';
 
@@ -23,5 +24,6 @@ class Routes {
     new MultiOptionFlareRoutes(router);
     new AndroidWhatsappRoutes(router);
     new TravelAppRoutes(router);
+    new E3RedesignRoutes(router);
   }
 }

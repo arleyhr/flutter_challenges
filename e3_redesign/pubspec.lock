@@ -2,14 +2,14 @@
 # See https://dart.dev/tools/pub/glossary#lockfile
 packages:
   android_whatsapp:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../android_whatsapp"
       relative: true
     source: path
     version: "1.0.0+1"
   app_for_collectors:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../app_for_collectors"
       relative: true
@@ -49,7 +49,7 @@ packages:
       name: camera
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.7+2"
+    version: "0.5.7+3"
   charcode:
     dependency: transitive
     description:
@@ -85,13 +85,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
-  e3_redesign:
-    dependency: "direct main"
-    description:
-      path: "../e3_redesign"
-      relative: true
-    source: path
-    version: "1.0.0+1"
   flare_dart:
     dependency: transitive
     description:
@@ -107,7 +100,7 @@ packages:
     source: hosted
     version: "1.8.3"
   fluro:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: fluro
       url: "https://pub.dartlang.org"
@@ -119,7 +112,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_challenges:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../main"
       relative: true
@@ -145,19 +138,19 @@ packages:
     source: sdk
     version: "0.0.0"
   google_fonts:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: google_fonts
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.0"
+    version: "0.3.2"
   http:
     dependency: transitive
     description:
       name: http
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.0+3"
+    version: "0.12.0+4"
   http_parser:
     dependency: transitive
     description:
@@ -187,7 +180,7 @@ packages:
     source: hosted
     version: "1.1.8"
   multi_option_flare:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../multi_option_flare"
       relative: true
@@ -250,9 +243,16 @@ packages:
     source: hosted
     version: "2.0.5"
   restaurant_details_review:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../restaurant_details_review"
+      relative: true
+    source: path
+    version: "1.0.0+1"
+  shared_app:
+    dependency: "direct main"
+    description:
+      path: "../shared_app"
       relative: true
     source: path
     version: "1.0.0+1"
@@ -311,7 +311,7 @@ packages:
     source: hosted
     version: "0.2.11"
   ticket_reservation_interaction:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../ticket_reservation_interaction"
       relative: true
@@ -332,7 +332,7 @@ packages:
     source: hosted
     version: "1.0.0"
   travel_app:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "../travel_app"
       relative: true
