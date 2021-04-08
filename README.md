@@ -12,7 +12,7 @@
 
 ## ⚡️Running app
 
-    cd main && flutter run
+    flutter run
 
 
 ## 🌀UI
@@ -29,7 +29,7 @@
 |<img src='https://res.cloudinary.com/arleyhr/image/upload/v1578172556/flutter/menu_rn8xuh.gif' width='360' />|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1578173588/flutter/demo-whatsapp_gfvods.gif' width='360' />
 [🌌 Inspiration](https://rive.app/a/danemackier/files/flare/multioptionbutton/preview)|[]()|
 
-|[⚡️Tourism App Concept](lib/apps/travel_app)| [⚡️Ticket Reservation Interaction](lib/apps/ticket_reservation_interaction)|
+|[⚡️Tourism App Concept](lib/apps/tourism_app_concept)| [⚡️Ticket Reservation Interaction](lib/apps/ticket_reservation_interaction)|
 |--|--|
 |<img src='https://res.cloudinary.com/arleyhr/image/upload/v1577809900/flutter/travel-app/demo_bpzzdm.gif' width='360' />|<img src="https://res.cloudinary.com/arleyhr/image/upload/v1578171533/flutter/ticket-reservation-interaction/demo_l9p4hh.gif" width='360'>
 [🌌 Inspiration](https://www.uplabs.com/posts/tourism-app-concept)|[🌌 Inspiration](https://www.uplabs.com/posts/ticket-reservation-micro-interaction)|

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'package:shared_app/application.dart';
-// import 'package:multi_option_flare/routes.dart';
-import 'package:restaurant_details_review/routes.dart';
-import 'package:app_for_collectors/routes.dart';
-import 'package:android_whatsapp/routes.dart';
-import 'package:travel_app/routes.dart';
-import 'package:ticket_reservation_interaction/modal.dart';
-import 'package:e3_redesign/routes.dart';
+import './application.dart';
+
+import 'apps/app_for_collectors/routes.dart';
+import 'apps/restaurant_details_review/routes.dart';
+import 'apps/android_whatsapp/routes.dart';
+import 'apps/tourism_app_concept/routes.dart';
+import 'apps/e3_redesign/routes.dart';
+import 'apps/ticket_reservation_interaction/modal.dart';
+import 'apps/fika_coffee/routes.dart';
 
 final ticketReservationModal = new TicketModal();
 
@@ -49,6 +50,11 @@ List apps = [
     "name": "E3 Redesign",
     "path": E3RedesignRoutes.homePath,
     "icon": Icons.gamepad
+  },
+  {
+    "name": "Fika Coffee",
+    "path": FikaCoffeeRoutes.homePath,
+    "icon": Icons.favorite_border
   },
 ];
 

@@ -16,6 +16,8 @@ version: 1.0.0+32
 environment:
   sdk: '>=2.12.0 <3.0.0'
 
+publish_to: none
+
 dependencies:
   flutter:
     sdk: flutter
@@ -31,30 +33,6 @@ dependencies:
   transparent_image: ^2.0.0
   camera: ^0.8.1
   google_fonts: ^2.0.0
-
-  shared_app:
-    path: lib/apps/shared_app
-
-  app_for_collectors:
-    path: lib/apps/app_for_collectors
-
-  restaurant_details_review:
-    path: lib/apps/restaurant_details_review
-
-  # multi_option_flare:
-  #   path: lib/apps/multi_option_flare
-
-  android_whatsapp:
-    path: lib/apps/android_whatsapp
-
-  travel_app:
-    path: lib/apps/travel_app
-
-  ticket_reservation_interaction:
-    path: lib/apps/ticket_reservation_interaction
-
-  e3_redesign:
-    path: lib/apps/e3_redesign
 
 dev_dependencies:
   flutter_launcher_icons: ^0.9.0
@@ -77,8 +55,6 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-  assets:
-   - assets/MultiOptionButton.flr
 
   # To add assets to your application, add an assets section, like this:
   # assets:

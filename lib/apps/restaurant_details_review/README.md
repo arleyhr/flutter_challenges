@@ -6,7 +6,7 @@
 
 |UI|
 |--|
-|<img src='https://github.com/arleyhr/flutter_challenges/blob/develop/restaurant_details_review/screenshots/screen.png?raw=true' />
+|<img src='https://res.cloudinary.com/arleyhr/image/upload/v1578174517/flutter/restaurant-reviews_vyzrgd.jpg' />
 
 <img src='https://assets.materialup.com/uploads/a5f92bd7-f096-4286-a990-a8175f96e644/attachment.jpg' />
 

@@ -1,0 +1,32 @@
+import '../utils/images.dart';
+
+class Console {
+  int? id;
+  String? name;
+  String? image;
+  int? totalGames;
+  Console({this.image, this.name, this.totalGames, this.id});
+}
+
+List<Console> consoles = [
+  Console(
+      id: 1,
+      name: 'Nintendo Switch',
+      image: appForCollectorsImages['switch'],
+      totalGames: 45),
+  Console(
+      id: 2,
+      name: 'Sony PlayStation 4',
+      image: appForCollectorsImages['ps4'],
+      totalGames: 102),
+  Console(
+      id: 3,
+      name: 'Microsoft Xbox One',
+      image: appForCollectorsImages['xbox'],
+      totalGames: 15),
+  Console(
+      id: 4,
+      name: 'Nintendo GB Advance',
+      image: appForCollectorsImages['gameboy'],
+      totalGames: 36),
+];
